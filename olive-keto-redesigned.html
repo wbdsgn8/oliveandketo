@@ -944,6 +944,46 @@
                 grid-template-columns: 1fr !important;
             }
         }
+
+        /* Background Patterns */
+        .bg-pattern-leaves {
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(139, 157, 131, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(232, 240, 227, 0.15) 0%, transparent 50%);
+            position: relative;
+        }
+
+        .bg-pattern-leaves::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 25 Q 15 20 20 15 Q 25 20 20 25 M 40 45 Q 35 40 40 35 Q 45 40 40 45' fill='%238B9D83' opacity='0.08'/%3E%3C/svg%3E");
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .bg-pattern-spots {
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(255, 214, 224, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(255, 180, 77, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(139, 157, 131, 0.06) 0%, transparent 30%);
+            position: relative;
+        }
+
+        .bg-pattern-spots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='10' cy='10' r='2' fill='%238B9D83' opacity='0.1'/%3E%3Ccircle cx='30' cy='25' r='1.5' fill='%23FFB84D' opacity='0.12'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -963,7 +1003,7 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero bg-pattern-leaves">
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badge">For Women 40+</div>
@@ -974,7 +1014,10 @@
                     <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
                 <div class="hero-trust">
-                    <span>✓</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8.47 10.52L10.93 13L15.53 8.5" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <span>No credit card • No signup • Instant results</span>
                 </div>
             </div>
@@ -1463,7 +1506,13 @@
 
                 <!-- Right: Mediterranean -->
                 <div style="padding: 40px; background: var(--soft-sage); border-radius: 16px; border: 2px solid var(--olive-green);">
-                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--olive-green);">✓ Mediterranean Whole Foods</h3>
+                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--olive-green);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.47 10.52L10.93 13L15.53 8.5" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Mediterranean Whole Foods
+                    </h3>
                     <ul style="list-style: none; font-size: 17px; line-height: 2; color: var(--text-dark);">
                         <li style="margin-bottom: 16px;"><strong>Real cheese from sheep/goat</strong> - easier digestion, complete nutrition</li>
                         <li style="margin-bottom: 16px;"><strong>Wild-caught fish</strong> - omega-3s for brain fog & hot flashes</li>
@@ -1488,15 +1537,39 @@
             <h2 style="font-size: 42px; margin-bottom: 20px; color: var(--text-dark);">Stop stressing about dinner</h2>
             <p style="font-size: 19px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.7;">Your personalized meal plan is one click away. No signup required.</p>
             <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 56px;">Create My Free Plan</a>
-            <p style="margin-top: 20px; font-size: 14px; color: var(--text-gray);">✓ Takes 60 seconds  ✓ No credit card  ✓ Instant results</p>
+            <p style="margin-top: 20px; font-size: 14px; color: var(--text-gray);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.47 10.52L10.93 13L15.53 8.5" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Takes 60 seconds
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin: 0 4px;">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.47 10.52L10.93 13L15.53 8.5" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                No credit card
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin: 0 4px;">
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.47 10.52L10.93 13L15.53 8.5" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Instant results
+            </p>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="pricing" id="pricing">
+    <section class="pricing bg-pattern-spots" id="pricing">
         <div class="pricing-content">
             <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
+                <h2>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 12px;">
+                        <path d="M12 22C12 22 4 18 4 12V5L12 2L20 5V12C20 18 12 22 12 22Z" stroke="#8B9D83" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="#E8F0E3"/>
+                        <ellipse cx="12" cy="9" rx="1.5" ry="2" fill="#8B9D83"/>
+                        <path d="M10.5 11C10.5 11 11 13 12 13C13 13 13.5 11 13.5 11" stroke="#8B9D83" stroke-width="1" stroke-linecap="round"/>
+                        <path d="M12 7C12 7 10 8 10 9.5M12 7C12 7 14 8 14 9.5" stroke="#8B9D83" stroke-width="0.8" stroke-linecap="round"/>
+                    </svg>
+                    Simple, Transparent Pricing
+                </h2>
                 <p class="section-subtitle">Start free, upgrade when ready. No pressure, no hidden fees.</p>
             </div>
             <div class="pricing-grid">
