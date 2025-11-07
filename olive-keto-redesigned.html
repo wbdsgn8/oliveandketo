@@ -2421,45 +2421,268 @@
             const isVegetarian = restrictions.includes('vegetarian');
 
             const breakfasts = [
-                { name: 'Greek Yogurt Bowl with Berries', desc: 'Organic Greek yogurt, mixed berries, walnuts, chia seeds', time: '5 min' },
-                { name: 'Mediterranean Veggie Omelet', desc: 'Free-range eggs, spinach, tomatoes, feta cheese, olives', time: '10 min' },
-                { name: 'Avocado & Smoked Salmon', desc: 'Wild salmon, avocado, lemon, extra virgin olive oil', time: '5 min' }
+                {
+                    name: 'Greek Yogurt Bowl with Berries',
+                    time: '5 min',
+                    ingredients: [
+                        '200g Greek yogurt (full-fat)',
+                        '80g mixed berries (blueberries, raspberries)',
+                        '30g raw walnuts, chopped',
+                        '1 tbsp chia seeds (15g)',
+                        'Drizzle of honey (optional)'
+                    ],
+                    macros: { calories: 320, protein: '22g', fat: '18g', carbs: '12g' }
+                },
+                {
+                    name: 'Mediterranean Veggie Omelet',
+                    time: '10 min',
+                    ingredients: [
+                        '3 large free-range eggs',
+                        '50g fresh spinach',
+                        '80g cherry tomatoes, halved',
+                        '40g feta cheese, crumbled',
+                        '6 Kalamata olives, sliced',
+                        '1 tbsp olive oil'
+                    ],
+                    macros: { calories: 380, protein: '24g', fat: '28g', carbs: '8g' }
+                },
+                {
+                    name: 'Avocado & Smoked Salmon',
+                    time: '5 min',
+                    ingredients: [
+                        '100g smoked wild salmon',
+                        '1 medium avocado (150g)',
+                        '½ lemon, juiced',
+                        '1 tbsp extra virgin olive oil',
+                        'Fresh dill, handful',
+                        'Black pepper to taste'
+                    ],
+                    macros: { calories: 420, protein: '26g', fat: '32g', carbs: '9g' }
+                }
             ];
 
             const lunches = [
-                { name: 'Mediterranean Tuna Salad', desc: 'Wild-caught tuna, mixed greens, olives, cucumber, olive oil', time: '10 min' },
-                { name: 'Greek Chicken Bowl', desc: 'Grilled chicken, cucumber, tomatoes, feta, tzatziki', time: '20 min' },
-                { name: 'Caprese Salad with Grilled Chicken', desc: 'Fresh mozzarella, heirloom tomatoes, basil, balsamic', time: '15 min' }
+                {
+                    name: 'Mediterranean Tuna Salad',
+                    time: '10 min',
+                    ingredients: [
+                        '150g wild-caught tuna (1 can, drained)',
+                        '100g mixed salad greens',
+                        '10 Kalamata olives, pitted',
+                        '1 medium cucumber (150g), diced',
+                        '100g cherry tomatoes, halved',
+                        '½ red onion (50g), thinly sliced',
+                        '2 tbsp extra virgin olive oil',
+                        '1 tbsp lemon juice',
+                        'Oregano and salt to taste'
+                    ],
+                    macros: { calories: 385, protein: '28g', fat: '26g', carbs: '8g' }
+                },
+                {
+                    name: 'Greek Chicken Bowl',
+                    time: '20 min',
+                    ingredients: [
+                        '150g grilled chicken breast',
+                        '1 medium cucumber (150g), diced',
+                        '150g cherry tomatoes, quartered',
+                        '50g feta cheese, crumbled',
+                        '80g tzatziki sauce',
+                        '60g mixed greens',
+                        '1 tbsp olive oil',
+                        'Fresh mint leaves'
+                    ],
+                    macros: { calories: 420, protein: '35g', fat: '22g', carbs: '12g' }
+                },
+                {
+                    name: 'Caprese Salad with Grilled Chicken',
+                    time: '15 min',
+                    ingredients: [
+                        '120g grilled chicken breast',
+                        '150g fresh mozzarella, sliced',
+                        '200g heirloom tomatoes, sliced',
+                        'Fresh basil leaves, handful',
+                        '2 tbsp extra virgin olive oil',
+                        '1 tbsp balsamic vinegar',
+                        'Sea salt and black pepper'
+                    ],
+                    macros: { calories: 445, protein: '32g', fat: '30g', carbs: '10g' }
+                }
             ];
 
             const dinners = [
-                { name: 'Herb-Crusted Salmon', desc: 'Wild salmon, mixed herbs, roasted vegetables, lemon', time: '30 min' },
-                { name: 'Greek Lamb Chops', desc: 'Grass-fed lamb, rosemary, garlic, roasted peppers', time: '25 min' },
-                { name: 'Mediterranean Sea Bass', desc: 'Whole sea bass, cherry tomatoes, olives, white wine', time: '35 min' }
+                {
+                    name: 'Herb-Crusted Salmon',
+                    time: '30 min',
+                    ingredients: [
+                        '180g wild salmon fillet',
+                        '2 tbsp mixed fresh herbs (parsley, dill, thyme)',
+                        '1 tbsp olive oil',
+                        '200g roasted vegetables (zucchini, bell peppers)',
+                        '½ lemon, juiced',
+                        '2 cloves garlic, minced',
+                        'Salt and pepper to taste'
+                    ],
+                    macros: { calories: 465, protein: '38g', fat: '32g', carbs: '6g' }
+                },
+                {
+                    name: 'Greek Lamb Chops',
+                    time: '25 min',
+                    ingredients: [
+                        '200g grass-fed lamb chops (2-3 pieces)',
+                        '2 sprigs fresh rosemary',
+                        '3 cloves garlic, crushed',
+                        '150g roasted red peppers',
+                        '100g grilled zucchini',
+                        '2 tbsp olive oil',
+                        'Lemon wedges for serving'
+                    ],
+                    macros: { calories: 520, protein: '36g', fat: '38g', carbs: '8g' }
+                },
+                {
+                    name: 'Mediterranean Sea Bass',
+                    time: '35 min',
+                    ingredients: [
+                        '200g whole sea bass fillet',
+                        '150g cherry tomatoes',
+                        '12 Kalamata olives, pitted',
+                        '50ml dry white wine',
+                        '2 tbsp olive oil',
+                        'Fresh thyme and oregano',
+                        '2 cloves garlic, sliced',
+                        'Capers, 1 tbsp (optional)'
+                    ],
+                    macros: { calories: 410, protein: '40g', fat: '22g', carbs: '7g' }
+                }
             ];
 
             let html = '';
             days.forEach((day, index) => {
+                const breakfast = breakfasts[index];
+                const lunch = lunches[index];
+                const dinner = dinners[index];
+
                 html += `
-                    <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--border-light);">
-                        <h4 style="font-size: 24px; margin-bottom: 20px; color: var(--accent-sage);">${day}</h4>
+                    <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--border-light); box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                        <h4 style="font-size: 24px; margin-bottom: 24px; color: var(--accent-sage); border-bottom: 2px solid var(--soft-sage); padding-bottom: 12px;">${day}</h4>
 
-                        <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-peach); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Breakfast</div>
-                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${breakfasts[index].name}</div>
-                            <div style="font-size: 15px; color: var(--text-gray);">${breakfasts[index].desc} • ${breakfasts[index].time}</div>
+                        <!-- Breakfast -->
+                        <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-peach); border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Breakfast</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${breakfast.time}</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${breakfast.name}</div>
+
+                            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px;">
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark);">Ingredients:</div>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-dark);">
+                                    ${breakfast.ingredients.map(ing => `<li style="padding-left: 16px; position: relative;"><span style="position: absolute; left: 0;">•</span>${ing}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; font-size: 13px;">
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.calories}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.protein}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.fat}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.carbs}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-sage); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Lunch</div>
-                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${lunches[index].name}</div>
-                            <div style="font-size: 15px; color: var(--text-gray);">${lunches[index].desc} • ${lunches[index].time}</div>
+                        <!-- Lunch -->
+                        <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-sage); border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Lunch</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${lunch.time}</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${lunch.name}</div>
+
+                            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px;">
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark);">Ingredients:</div>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-dark);">
+                                    ${lunch.ingredients.map(ing => `<li style="padding-left: 16px; position: relative;"><span style="position: absolute; left: 0;">•</span>${ing}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; font-size: 13px;">
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.calories}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.protein}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.fat}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.carbs}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div style="padding: 16px; background: var(--soft-blue); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Dinner</div>
-                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${dinners[index].name}</div>
-                            <div style="font-size: 15px; color: var(--text-gray);">${dinners[index].desc} • ${dinners[index].time}</div>
+                        <!-- Dinner -->
+                        <div style="padding: 20px; background: var(--soft-blue); border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Dinner</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${dinner.time}</div>
+                            </div>
+                            <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${dinner.name}</div>
+
+                            <div style="background: white; padding: 16px; border-radius: 8px; margin-bottom: 12px;">
+                                <div style="font-size: 13px; font-weight: 600; margin-bottom: 8px; color: var(--text-dark);">Ingredients:</div>
+                                <ul style="list-style: none; padding: 0; margin: 0; font-size: 14px; line-height: 1.8; color: var(--text-dark);">
+                                    ${dinner.ingredients.map(ing => `<li style="padding-left: 16px; position: relative;"><span style="position: absolute; left: 0;">•</span>${ing}</li>`).join('')}
+                                </ul>
+                            </div>
+
+                            <div style="display: flex; gap: 12px; font-size: 13px;">
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.calories}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.protein}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.fat}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
+                                </div>
+                                <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.carbs}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Daily Total -->
+                        <div style="margin-top: 20px; padding: 16px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); border-radius: 12px;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text-dark);">Daily Total:</div>
+                            <div style="display: flex; gap: 12px; font-size: 13px;">
+                                <div style="background: white; padding: 10px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--olive-green); font-size: 18px;">${breakfast.macros.calories + lunch.macros.calories + dinner.macros.calories}</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Total Calories</div>
+                                </div>
+                                <div style="background: white; padding: 10px; border-radius: 6px; flex: 1; text-align: center;">
+                                    <div style="font-weight: 700; color: var(--olive-green); font-size: 18px;">${parseInt(breakfast.macros.protein) + parseInt(lunch.macros.protein) + parseInt(dinner.macros.protein)}g</div>
+                                    <div style="color: var(--text-gray); font-size: 11px;">Total Protein</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 `;
