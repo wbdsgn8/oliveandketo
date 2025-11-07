@@ -216,55 +216,40 @@
         }
 
         .hero-cards-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 550px;
+            position: relative;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .hero-meal-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        .hero-carousel {
             overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        }
+
+        .hero-carousel-inner {
             display: flex;
-            gap: 24px;
-            align-items: center;
-            padding: 24px;
-            transition: all 0.3s ease;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .hero-meal-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.18);
-        }
-
-        .hero-meal-card:nth-child(1) {
-            background: linear-gradient(135deg, #FFF9F0 0%, white 100%);
-        }
-
-        .hero-meal-card:nth-child(2) {
-            background: linear-gradient(135deg, white 0%, #E8F0E3 100%);
-        }
-
-        .hero-meal-card:nth-child(3) {
-            background: linear-gradient(135deg, #FFF4E6 0%, white 100%);
+        .hero-meal-card {
+            min-width: 100%;
+            background: white;
+            display: flex;
+            flex-direction: column;
         }
 
         .hero-meal-image {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: 400px;
             background: #E8E8E8;
-            border-radius: 16px;
+            position: relative;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-meal-content {
-            flex: 1;
+            padding: 32px;
+            background: white;
         }
 
         .hero-meal-label {
@@ -273,20 +258,105 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .hero-meal-title {
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-family: 'DM Serif Display', serif;
         }
 
         .hero-meal-description {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--text-gray);
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .hero-meal-macros {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 20px;
+            background: var(--soft-sage);
+            border-radius: 12px;
+        }
+
+        .macro-item {
+            text-align: center;
+        }
+
+        .macro-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--olive-green);
+            margin-bottom: 4px;
+        }
+
+        .macro-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Carousel controls */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: var(--olive-green);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 200px;
+            background: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--olive-green);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-arrow-left {
+            left: -24px;
+        }
+
+        .carousel-arrow-right {
+            right: -24px;
         }
 
         /* Food gallery hover effects */
@@ -1011,32 +1081,110 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-cards-container">
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Breakfast</div>
-                            <div class="hero-meal-title">Greek Yogurt Bowl</div>
-                            <div class="hero-meal-description">Organic berries, raw walnuts, hormone-balancing seeds · 5 min</div>
+                    <!-- Carousel Navigation Arrows -->
+                    <button class="carousel-arrow carousel-arrow-left" id="prevSlide" aria-label="Previous meal">‹</button>
+                    <button class="carousel-arrow carousel-arrow-right" id="nextSlide" aria-label="Next meal">›</button>
+
+                    <!-- Carousel Container -->
+                    <div class="hero-carousel">
+                        <div class="hero-carousel-inner" id="carouselInner">
+                            <!-- Slide 1: Breakfast -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=800&fit=crop&auto=format&q=85'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Breakfast</div>
+                                    <div class="hero-meal-title">Greek Yogurt Bowl</div>
+                                    <div class="hero-meal-description">Organic Greek yogurt topped with fresh berries, raw walnuts, and hormone-balancing chia seeds. A protein-rich start that keeps you satisfied all morning.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">320</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">22g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">18g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">12g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Lunch -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=800&fit=crop&auto=format&q=85'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Lunch</div>
+                                    <div class="hero-meal-title">Mediterranean Tuna Salad</div>
+                                    <div class="hero-meal-description">Wild-caught tuna over crisp greens with cucumber, cherry tomatoes, Kalamata olives, and extra virgin olive oil. Fresh, filling, and ready in minutes.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">385</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">28g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">26g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">8g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Dinner -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=800&fit=crop&auto=format&q=85'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Dinner</div>
+                                    <div class="hero-meal-title">Herb-Crusted Salmon</div>
+                                    <div class="hero-meal-description">Wild-caught salmon with a fragrant herb crust, served alongside roasted Mediterranean vegetables. Rich in omega-3s and anti-inflammatory compounds.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">465</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">38g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">32g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">6g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Lunch</div>
-                            <div class="hero-meal-title">Mediterranean Tuna Salad</div>
-                            <div class="hero-meal-description">Wild-caught tuna, fresh vegetables, extra virgin olive oil · 15 min</div>
-                        </div>
-                    </div>
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image" style="background-image: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Dinner</div>
-                            <div class="hero-meal-title">Herb-Crusted Salmon</div>
-                            <div class="hero-meal-description">Wild salmon, seasonal vegetables, anti-inflammatory herbs · 30 min</div>
-                        </div>
+
+                    <!-- Carousel Dots -->
+                    <div class="carousel-controls">
+                        <button class="carousel-dot active" data-slide="0" aria-label="Go to breakfast"></button>
+                        <button class="carousel-dot" data-slide="1" aria-label="Go to lunch"></button>
+                        <button class="carousel-dot" data-slide="2" aria-label="Go to dinner"></button>
                     </div>
                 </div>
             </div>
@@ -1922,6 +2070,57 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Hero Carousel functionality
+        let currentSlide = 0;
+        const carouselInner = document.getElementById('carouselInner');
+        const slides = document.querySelectorAll('.hero-meal-card');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            // Update slide position
+            const offset = -currentSlide * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Event listeners for arrows
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Auto-advance carousel every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
         });
 
         // Progress bar functionality
