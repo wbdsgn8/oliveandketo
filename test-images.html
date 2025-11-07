@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+        .test-box {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .image-box {
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        h1 { color: #333; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Image Loading Test</h1>
+
+    <div class="test-box">
+        <h2>Test 1: Hero Image (Greek Yogurt Bowl)</h2>
+        <div class="image-box" style="background-image: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=400&fit=crop&auto=format&q=80');"></div>
+        <p>Ha látod a képet ↑ akkor működik!</p>
+    </div>
+
+    <div class="test-box">
+        <h2>Test 2: Salad Image</h2>
+        <div class="image-box" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&auto=format&q=80');"></div>
+        <p>Ha látod a képet ↑ akkor működik!</p>
+    </div>
+
+    <div class="test-box">
+        <h2>Test 3: Salmon Image</h2>
+        <div class="image-box" style="background-image: url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=400&fit=crop&auto=format&q=80');"></div>
+        <p>Ha látod a képet ↑ akkor működik!</p>
+    </div>
+
+    <div class="test-box">
+        <h2>✅ Diagnosztika:</h2>
+        <p><strong>Ha nem látod a képeket:</strong></p>
+        <ul>
+            <li>Ad Blocker vagy Privacy Blocker aktív</li>
+            <li>Nincs internet kapcsolat</li>
+            <li>Unsplash.com blokkolt a hálózatodon</li>
+        </ul>
+        <p><strong>Ha látod a képeket:</strong></p>
+        <ul>
+            <li>Képek működnek! ✅</li>
+            <li>Az olive-keto-redesigned.html-t hard refresh-eld: Ctrl+Shift+R (vagy Cmd+Shift+R Mac-en)</li>
+            <li>Vagy töröld a böngésző cache-t</li>
+        </ul>
+    </div>
+
+    <script>
+        console.log('Test page loaded');
+        console.log('If you see errors in console about images, check:');
+        console.log('1. Network tab (F12)');
+        console.log('2. Content blockers');
+        console.log('3. Internet connection');
+    </script>
+</body>
+</html>
