@@ -1876,7 +1876,7 @@
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Everything you need to succeed</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Start eating better today with a personalized plan designed for you</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Create My Free 7-Day Plan →</a>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Create My Free 3-Day Plan →</a>
             <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ Personalized for your goals • ✓ Ready in 60 seconds</p>
         </div>
     </section>
@@ -1901,7 +1901,7 @@
                     <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=320&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <h3>Get Your Plan</h3>
-                    <p>Receive a personalized 7-day meal plan with recipes and a complete shopping list.</p>
+                    <p>Receive a personalized 3-day meal plan to see if Mediterranean-keto works for you.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
@@ -2155,18 +2155,18 @@
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3 class="pricing-name">Free Week</h3>
+                    <h3 class="pricing-name">Free Trial</h3>
                     <p class="pricing-description">Try before you commit</p>
                     <div class="pricing-price">$0</div>
-                    <div class="pricing-period">One week only</div>
+                    <div class="pricing-period">3 days only</div>
                     <ul class="pricing-features">
-                        <li>7-day meal ideas</li>
+                        <li>3-day meal ideas</li>
                         <li>Meal names & descriptions</li>
                         <li>Basic prep times</li>
                         <li>Dietary preferences respected</li>
                         <li>No credit card needed</li>
                     </ul>
-                    <a href="#generator" class="btn-primary" style="width: 100%;">Get My Free Week →</a>
+                    <a href="#generator" class="btn-primary" style="width: 100%;">Get My Free 3 Days →</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
@@ -2207,7 +2207,7 @@
     <section class="generator" id="generator">
         <div style="text-align: center; margin-bottom: 48px; max-width: 1100px; margin-left: auto; margin-right: auto;">
             <div class="section-header" style="margin-bottom: 0;">
-                <h2>Create Your First Week</h2>
+                <h2>Create Your Free 3-Day Trial</h2>
                 <p class="section-subtitle">Tell us about yourself and we'll create a personalized meal plan in seconds. Completely free.</p>
             </div>
         </div>
@@ -2329,22 +2329,13 @@
                     </div>
 
                     <button type="submit" class="btn-primary" id="generateBtn" style="width: 100%; margin-top: 32px; padding: 20px; font-size: 18px;">
-                        🎉 Generate My Free Mediterranean Plan
+                        🎉 Generate My Free 3-Day Plan
                     </button>
                 </form>
 
                 <!-- Results Container -->
                 <div id="resultsContainer" style="display: none; margin-top: 80px; padding-top: 80px; border-top: 2px solid var(--border-light);">
                     <div id="mealPlanResults"></div>
-                    
-                    <div style="margin-top: 60px; text-align: center; padding: 40px; background: var(--soft-sage); border-radius: 16px;">
-                        <h3 style="margin-bottom: 20px;">Love it? Get fresh ideas every Monday</h3>
-                        <p style="color: var(--text-gray); margin-bottom: 24px;">Subscribe for free and we'll send new meal plans to your inbox weekly</p>
-                        <form id="emailForm" style="display: flex; gap: 16px; max-width: 500px; margin: 0 auto;">
-                            <input type="email" class="form-input" placeholder="Your email address" required style="flex: 1;">
-                            <button type="submit" class="btn-primary">Subscribe Free</button>
-                        </form>
-                    </div>
                 </div>
 
                 <!-- FAQ -->
@@ -2352,8 +2343,8 @@
                     <h3 class="faq-title">Frequently Asked Questions</h3>
                     
                     <details>
-                        <summary>What's included in the free week?</summary>
-                        <p>The free week gives you 7 days of meal names and prep times - enough to know if this approach works for you. Shopping lists, full recipes with instructions, and ongoing weekly plans require a paid subscription ($8.99/month).</p>
+                        <summary>What's included in the free trial?</summary>
+                        <p>The free trial gives you 3 days of meal ideas with names, descriptions, and prep times - enough to know if this approach works for you. Shopping lists, full recipes with instructions, and ongoing weekly plans require a paid subscription ($8.99/month).</p>
                     </details>
 
                     <details>
@@ -2425,38 +2416,26 @@
     <script>
         // Helper functions for demo meal plan generation
         function generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions) {
-            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            const days = ['Monday', 'Tuesday', 'Wednesday'];
             const isDairyFree = restrictions.includes('dairy-free');
             const isVegetarian = restrictions.includes('vegetarian');
 
             const breakfasts = [
                 { name: 'Greek Yogurt Bowl with Berries', desc: 'Organic Greek yogurt, mixed berries, walnuts, chia seeds', time: '5 min' },
                 { name: 'Mediterranean Veggie Omelet', desc: 'Free-range eggs, spinach, tomatoes, feta cheese, olives', time: '10 min' },
-                { name: 'Avocado & Smoked Salmon', desc: 'Wild salmon, avocado, lemon, extra virgin olive oil', time: '5 min' },
-                { name: 'Almond Flour Pancakes', desc: 'Almond flour, eggs, berries, cinnamon', time: '15 min' },
-                { name: 'Shakshuka', desc: 'Poached eggs in spiced tomato sauce, herbs', time: '20 min' },
-                { name: 'Chia Pudding Bowl', desc: 'Chia seeds, coconut milk, berries, almonds', time: '5 min' },
-                { name: 'Spanish Tortilla', desc: 'Eggs, zucchini, onions, olive oil', time: '15 min' }
+                { name: 'Avocado & Smoked Salmon', desc: 'Wild salmon, avocado, lemon, extra virgin olive oil', time: '5 min' }
             ];
 
             const lunches = [
                 { name: 'Mediterranean Tuna Salad', desc: 'Wild-caught tuna, mixed greens, olives, cucumber, olive oil', time: '10 min' },
                 { name: 'Greek Chicken Bowl', desc: 'Grilled chicken, cucumber, tomatoes, feta, tzatziki', time: '20 min' },
-                { name: 'Caprese Salad with Grilled Chicken', desc: 'Fresh mozzarella, heirloom tomatoes, basil, balsamic', time: '15 min' },
-                { name: 'Seafood Zoodle Bowl', desc: 'Shrimp, zucchini noodles, cherry tomatoes, garlic', time: '15 min' },
-                { name: 'Lentil & Veggie Soup', desc: 'Green lentils, carrots, celery, herbs, olive oil', time: '30 min' },
-                { name: 'Lamb Kofta Bowl', desc: 'Spiced lamb meatballs, cucumber yogurt, greens', time: '25 min' },
-                { name: 'Nicoise Salad', desc: 'Seared tuna, green beans, eggs, olives, anchovies', time: '20 min' }
+                { name: 'Caprese Salad with Grilled Chicken', desc: 'Fresh mozzarella, heirloom tomatoes, basil, balsamic', time: '15 min' }
             ];
 
             const dinners = [
                 { name: 'Herb-Crusted Salmon', desc: 'Wild salmon, mixed herbs, roasted vegetables, lemon', time: '30 min' },
                 { name: 'Greek Lamb Chops', desc: 'Grass-fed lamb, rosemary, garlic, roasted peppers', time: '25 min' },
-                { name: 'Mediterranean Sea Bass', desc: 'Whole sea bass, cherry tomatoes, olives, white wine', time: '35 min' },
-                { name: 'Chicken Souvlaki', desc: 'Marinated chicken skewers, tzatziki, grilled vegetables', time: '30 min' },
-                { name: 'Eggplant Moussaka', desc: 'Layered eggplant, spiced meat, bechamel sauce', time: '45 min' },
-                { name: 'Shrimp Saganaki', desc: 'Jumbo shrimp, tomato sauce, feta, ouzo', time: '20 min' },
-                { name: 'Stuffed Bell Peppers', desc: 'Ground lamb, cauliflower rice, herbs, tomato', time: '40 min' }
+                { name: 'Mediterranean Sea Bass', desc: 'Whole sea bass, cherry tomatoes, olives, white wine', time: '35 min' }
             ];
 
             let html = '';
@@ -2553,7 +2532,7 @@
             const restrictions = Array.from(document.querySelectorAll('input[name="restrictions"]:checked'))
                 .map(cb => cb.value);
             
-            generateBtn.innerHTML = '<span class="loading"></span> Creating your personalized week...';
+            generateBtn.innerHTML = '<span class="loading"></span> Creating your personalized 3-day plan...';
             generateBtn.disabled = true;
             
             try {
@@ -2566,21 +2545,15 @@
 
                 const mealPlan = `
                     <div style="background: var(--warm-white); padding: 40px; border-radius: 16px; margin-bottom: 24px;">
-                        <h3 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Your Personalized 7-Day Mediterranean Meal Plan</h3>
+                        <h3 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Your Personalized 3-Day Mediterranean Meal Plan</h3>
                         <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">Customized for: ${ageRange} years old • ${goal} • ${cookingTime} meals • ${servings} servings</p>
 
                         ${generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions)}
 
-                        <div style="margin-top: 60px; padding: 40px; background: var(--soft-sage); border-radius: 16px;">
-                            <h3 style="font-size: 28px; margin-bottom: 20px;">📝 Your Shopping List</h3>
-                            <p style="color: var(--text-gray); margin-bottom: 24px;">Everything you need for this week, organized by section:</p>
-                            ${generateShoppingList(restrictions)}
-                        </div>
-
                         <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, var(--soft-peach) 0%, var(--soft-sage) 100%); border-radius: 16px;">
-                            <h3 style="margin-bottom: 16px;">🎉 Your free week is ready!</h3>
-                            <p style="color: var(--text-gray); margin-bottom: 24px; line-height: 1.7;">Want full recipes with step-by-step instructions, nutrition info, and fresh plans every week?</p>
-                            <a href="#pricing" class="btn-primary" style="display: inline-block; text-decoration: none;">Upgrade for Full Recipes - $8.99/month</a>
+                            <h3 style="margin-bottom: 16px;">🎉 Your free 3-day plan is ready!</h3>
+                            <p style="color: var(--text-gray); margin-bottom: 24px; line-height: 1.7;">Love it? Upgrade for full recipes, shopping lists, and fresh plans every week!</p>
+                            <a href="#pricing" class="btn-primary" style="display: inline-block; text-decoration: none;">Upgrade for Full Access - $8.99/month</a>
                             <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ 30-day money-back guarantee • Cancel anytime</p>
                         </div>
                     </div>
@@ -2595,16 +2568,9 @@
                 mealPlanResults.innerHTML = '<p style="text-align: center; color: #5A5A5A; padding: 40px;">Something went wrong. Please try again.</p>';
                 resultsContainer.style.display = 'block';
             } finally {
-                generateBtn.innerHTML = 'Generate My Free Week';
+                generateBtn.innerHTML = 'Generate My Free 3 Days';
                 generateBtn.disabled = false;
             }
-        });
-
-        // Email subscription
-        document.getElementById('emailForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            alert('Thank you for subscribing! You'll receive fresh meal ideas every Monday. 🫒');
-            e.target.reset();
         });
 
         // Smooth scroll for anchor links
