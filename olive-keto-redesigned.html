@@ -19,9 +19,17 @@
             --cream: #FFF9F0;
             --warm-white: #FFFCF7;
             --soft-peach: #FFF4E6;
+
+            /* Primary CTA colors - for buttons and main actions */
             --primary-green: #5F7A61;
             --primary-green-dark: #4A5D4C;
-            --olive-green: #5F7A61;
+            --olive-green: #5F7A61; /* Main CTA color */
+
+            /* Accent colors - for decorative elements, badges, stats */
+            --accent-blue: #6B8CAE; /* Calm blue for stats and indicators */
+            --accent-sage: #9BAA96; /* Softer green for badges and labels */
+            --accent-warm: #C4A57B; /* Warm tone for highlights */
+
             --soft-pink: #FFD6E0;
             --soft-blue: #D6E9FF;
             --soft-sage: #E8F0E3;
@@ -133,7 +141,7 @@
 
         .hero-badge {
             display: inline-block;
-            background: linear-gradient(135deg, var(--olive-green) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, var(--accent-sage) 0%, var(--accent-blue) 100%);
             color: white;
             padding: 12px 28px;
             border-radius: 24px;
@@ -258,7 +266,7 @@
 
         .hero-meal-label {
             font-size: 13px;
-            color: var(--olive-green);
+            color: var(--accent-sage);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -296,7 +304,7 @@
         .macro-value {
             font-size: 24px;
             font-weight: 700;
-            color: var(--olive-green);
+            color: var(--accent-blue);
             margin-bottom: 4px;
         }
 
@@ -327,7 +335,7 @@
         }
 
         .carousel-dot.active {
-            background: var(--olive-green);
+            background: var(--accent-blue);
             width: 32px;
             border-radius: 6px;
         }
@@ -350,7 +358,7 @@
         }
 
         .carousel-arrow:hover {
-            background: var(--olive-green);
+            background: var(--accent-sage);
             color: white;
             transform: scale(1.1);
         }
@@ -621,7 +629,7 @@
         .stat-number {
             font-size: 48px;
             font-weight: 700;
-            color: var(--olive-green);
+            color: var(--accent-blue);
             margin-bottom: 8px;
         }
 
@@ -701,7 +709,7 @@
             top: -16px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--olive-green);
+            background: var(--accent-warm);
             color: white;
             padding: 8px 24px;
             border-radius: 24px;
@@ -821,7 +829,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--olive-green) 0%, var(--primary-green) 100%);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-sage) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -886,14 +894,14 @@
         }
 
         .form-step.active .step-circle {
-            background: var(--olive-green);
-            border-color: var(--olive-green);
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
             color: white;
         }
 
         .form-step.completed .step-circle {
-            background: var(--olive-green);
-            border-color: var(--olive-green);
+            background: var(--accent-sage);
+            border-color: var(--accent-sage);
             color: white;
         }
 
@@ -908,7 +916,7 @@
         }
 
         .form-step.active .step-label {
-            color: var(--olive-green);
+            color: var(--accent-blue);
             font-weight: 600;
         }
 
@@ -994,7 +1002,7 @@
 
         .form-input:focus, .form-select:focus {
             outline: none;
-            border-color: var(--olive-green);
+            border-color: var(--accent-blue);
         }
 
         .checkbox-group {
@@ -1016,7 +1024,7 @@
         }
 
         .checkbox-label:hover {
-            border-color: var(--olive-green);
+            border-color: var(--accent-sage);
             background: var(--soft-sage);
         }
 
@@ -1192,7 +1200,7 @@
         .stats-highlight-number {
             font-size: 32px;
             font-weight: 700;
-            color: var(--olive-green);
+            color: var(--accent-blue);
             margin-bottom: 4px;
         }
 
@@ -1277,7 +1285,7 @@
         .progress-label {
             font-size: 14px;
             font-weight: 600;
-            color: var(--olive-green);
+            color: var(--accent-blue);
         }
 
         .progress-text {
@@ -1293,7 +1301,7 @@
         }
 
         .progress-bar {
-            background: linear-gradient(90deg, var(--olive-green) 0%, var(--primary-green) 100%);
+            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-sage) 100%);
             height: 100%;
             width: 0%;
             transition: width 0.3s ease;
@@ -1600,19 +1608,19 @@
             <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Trusted by Real Women</p>
             <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">2,000+</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">2,000+</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Active Members</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
                     <div style="font-size: 14px; color: var(--text-gray);">4.8/5.0 Rating</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">50,000+</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">50,000+</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Meals Planned</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">95%</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">95%</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Would Recommend</div>
                 </div>
             </div>
@@ -2020,8 +2028,8 @@
                 </div>
 
                 <!-- Right: Mediterranean -->
-                <div style="padding: 40px; background: var(--soft-sage); border-radius: 16px; border: 2px solid var(--olive-green);">
-                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--olive-green);">✓ Mediterranean Whole Foods</h3>
+                <div style="padding: 40px; background: var(--soft-sage); border-radius: 16px; border: 2px solid var(--accent-sage);">
+                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--accent-sage);">✓ Mediterranean Whole Foods</h3>
                     <ul style="list-style: none; font-size: 17px; line-height: 2; color: var(--text-dark);">
                         <li style="margin-bottom: 16px;"><strong>Real cheese from sheep/goat</strong> - easier digestion, complete nutrition</li>
                         <li style="margin-bottom: 16px;"><strong>Wild-caught fish</strong> - omega-3s for brain fog & hot flashes</li>
@@ -2029,7 +2037,7 @@
                         <li style="margin-bottom: 16px;"><strong>Extra virgin olive oil</strong> - polyphenols reduce inflammation</li>
                         <li style="margin-bottom: 16px;"><strong>Nuts, seeds, legumes</strong> - phytoestrogens ease symptoms</li>
                     </ul>
-                    <p style="margin-top: 24px; font-size: 16px; color: var(--olive-green); font-weight: 600;">Result: Sustained energy, clearer thinking, easier perimenopause, lasting weight management</p>
+                    <p style="margin-top: 24px; font-size: 16px; color: var(--accent-sage); font-weight: 600;">Result: Sustained energy, clearer thinking, easier perimenopause, lasting weight management</p>
                 </div>
             </div>
 
@@ -2112,7 +2120,7 @@
     <!-- Generator -->
     <section class="generator" id="generator">
         <div style="text-align: center; margin-bottom: 48px; max-width: 1100px; margin-left: auto; margin-right: auto;">
-            <div style="display: inline-block; background: var(--soft-sage); padding: 10px 24px; border-radius: 8px; border: 2px solid var(--olive-green); margin-bottom: 32px;">
+            <div style="display: inline-block; background: var(--soft-sage); padding: 10px 24px; border-radius: 8px; border: 2px solid var(--accent-sage); margin-bottom: 32px;">
                 <span style="font-size: 14px; color: var(--text-dark); font-weight: 600;">⏰ <strong>124 spots left</strong> for free plans this week</span>
             </div>
             <div class="section-header" style="margin-bottom: 0;">
@@ -2244,11 +2252,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group" style="background: var(--soft-sage); padding: 24px; border-radius: 12px; border: 2px solid var(--olive-green); margin-top: 24px;">
+                    <div class="form-group" style="background: var(--soft-sage); padding: 24px; border-radius: 12px; border: 2px solid var(--accent-sage); margin-top: 24px;">
                         <label class="form-label" style="margin-bottom: 8px;">📧 Email Address (Optional)</label>
                         <input type="email" class="form-input" id="emailInput" placeholder="your@email.com" style="margin-bottom: 12px;">
                         <div style="display: flex; align-items: start; gap: 8px;">
-                            <span style="color: var(--olive-green); font-size: 16px; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--accent-sage); font-size: 16px; flex-shrink: 0;">✓</span>
                             <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.5;">
                                 Get your meal plan via email • No spam, ever • Unsubscribe anytime
                             </p>
@@ -2385,22 +2393,22 @@
             days.forEach((day, index) => {
                 html += `
                     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--border-light);">
-                        <h4 style="font-size: 24px; margin-bottom: 20px; color: var(--olive-green);">${day}</h4>
+                        <h4 style="font-size: 24px; margin-bottom: 20px; color: var(--accent-sage);">${day}</h4>
 
                         <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-peach); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Breakfast</div>
+                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Breakfast</div>
                             <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${breakfasts[index].name}</div>
                             <div style="font-size: 15px; color: var(--text-gray);">${breakfasts[index].desc} • ${breakfasts[index].time}</div>
                         </div>
 
                         <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-sage); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Lunch</div>
+                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Lunch</div>
                             <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${lunches[index].name}</div>
                             <div style="font-size: 15px; color: var(--text-gray);">${lunches[index].desc} • ${lunches[index].time}</div>
                         </div>
 
                         <div style="padding: 16px; background: var(--soft-blue); border-radius: 12px;">
-                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Dinner</div>
+                            <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Dinner</div>
                             <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${dinners[index].name}</div>
                             <div style="font-size: 15px; color: var(--text-gray);">${dinners[index].desc} • ${dinners[index].time}</div>
                         </div>
@@ -2415,7 +2423,7 @@
             return `
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🥩 Proteins</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🥩 Proteins</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Wild-caught salmon (2 lbs)</li>
                             <li>• Grass-fed lamb chops (1.5 lbs)</li>
@@ -2426,7 +2434,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🥬 Vegetables</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🥬 Vegetables</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Mixed salad greens (3 bags)</li>
                             <li>• Cherry tomatoes (3 pints)</li>
@@ -2437,7 +2445,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🧀 Dairy & Cheese</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🧀 Dairy & Cheese</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Greek yogurt (32 oz)</li>
                             <li>• Feta cheese (8 oz)</li>
@@ -2446,7 +2454,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🫒 Pantry Essentials</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🫒 Pantry Essentials</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Extra virgin olive oil</li>
                             <li>• Kalamata olives (1 jar)</li>
@@ -2622,7 +2630,7 @@
 
             if (progress === 100) {
                 progressText.textContent = '✓ Ready to Generate!';
-                progressText.style.color = 'var(--olive-green)';
+                progressText.style.color = 'var(--accent-blue)';
                 progressText.style.fontWeight = '700';
             } else {
                 progressText.style.color = 'var(--text-gray)';
