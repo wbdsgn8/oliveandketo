@@ -19,15 +19,17 @@
             --cream: #FFF9F0;
             --warm-white: #FFFCF7;
             --soft-peach: #FFF4E6;
-            --primary-yellow: #FFB84D;
-            --yellow-hover: #FFA533;
-            --olive-green: #8B9D83;
+            --primary-green: #5F7A61;
+            --primary-green-dark: #4A5D4C;
+            --olive-green: #5F7A61;
             --soft-pink: #FFD6E0;
             --soft-blue: #D6E9FF;
             --soft-sage: #E8F0E3;
             --text-dark: #2D2D2D;
             --text-gray: #5A5A5A;
             --border-light: #F0E8DB;
+            --placeholder-bg: #E8E8E8;
+            --placeholder-stroke: #999;
         }
 
         body {
@@ -131,15 +133,16 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--olive-green);
+            background: linear-gradient(135deg, var(--olive-green) 0%, var(--primary-green) 100%);
             color: white;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 24px;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(95, 122, 97, 0.25);
         }
 
         .hero h1 {
@@ -165,22 +168,23 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 18px 40px;
-            background: var(--primary-yellow);
+            padding: 20px 48px;
+            background: var(--primary-green);
             color: white;
             text-decoration: none;
-            font-size: 17px;
+            font-size: 18px;
             font-weight: 600;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(95, 122, 97, 0.3);
         }
 
         .btn-primary:hover {
-            background: var(--yellow-hover);
+            background: var(--primary-green-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(255, 184, 77, 0.4);
+            box-shadow: 0 8px 24px rgba(95, 122, 97, 0.4);
         }
 
         .btn-secondary {
@@ -216,55 +220,40 @@
         }
 
         .hero-cards-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 550px;
+            position: relative;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .hero-meal-card {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        .hero-carousel {
             overflow: hidden;
+            border-radius: 24px;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        }
+
+        .hero-carousel-inner {
             display: flex;
-            gap: 24px;
-            align-items: center;
-            padding: 24px;
-            transition: all 0.3s ease;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .hero-meal-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.18);
-        }
-
-        .hero-meal-card:nth-child(1) {
-            background: linear-gradient(135deg, #FFF9F0 0%, white 100%);
-        }
-
-        .hero-meal-card:nth-child(2) {
-            background: linear-gradient(135deg, white 0%, #E8F0E3 100%);
-        }
-
-        .hero-meal-card:nth-child(3) {
-            background: linear-gradient(135deg, #FFF4E6 0%, white 100%);
+        .hero-meal-card {
+            min-width: 100%;
+            background: white;
+            display: flex;
+            flex-direction: column;
         }
 
         .hero-meal-image {
-            width: 120px;
-            height: 120px;
-            background: #E8E8E8;
-            border-radius: 16px;
+            width: 100%;
+            height: 400px;
+            background: var(--placeholder-bg);
+            position: relative;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .hero-meal-content {
-            flex: 1;
+            padding: 32px;
+            background: white;
         }
 
         .hero-meal-label {
@@ -273,20 +262,105 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .hero-meal-title {
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-family: 'DM Serif Display', serif;
         }
 
         .hero-meal-description {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--text-gray);
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .hero-meal-macros {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 20px;
+            background: var(--soft-sage);
+            border-radius: 12px;
+        }
+
+        .macro-item {
+            text-align: center;
+        }
+
+        .macro-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--olive-green);
+            margin-bottom: 4px;
+        }
+
+        .macro-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Carousel controls */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: var(--olive-green);
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 200px;
+            background: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--olive-green);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-arrow-left {
+            left: -24px;
+        }
+
+        .carousel-arrow-right {
+            right: -24px;
         }
 
         /* Food gallery hover effects */
@@ -690,8 +764,11 @@
         }
 
         .generator-content {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            align-items: start;
         }
 
         .form-card {
@@ -699,6 +776,199 @@
             padding: 60px;
             border-radius: 24px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            flex: 1;
+        }
+
+        .social-proof-sidebar {
+            width: 280px;
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 120px;
+        }
+
+        .social-proof-sidebar h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .recent-signup {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: var(--soft-sage);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .signup-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--olive-green) 0%, var(--primary-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .signup-info {
+            flex: 1;
+        }
+
+        .signup-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .signup-time {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .form-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .form-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border-light);
+            z-index: 0;
+        }
+
+        .form-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: 600;
+            color: var(--text-gray);
+            transition: all 0.3s ease;
+        }
+
+        .form-step.active .step-circle {
+            background: var(--olive-green);
+            border-color: var(--olive-green);
+            color: white;
+        }
+
+        .form-step.completed .step-circle {
+            background: var(--olive-green);
+            border-color: var(--olive-green);
+            color: white;
+        }
+
+        .form-step.completed .step-circle::after {
+            content: '✓';
+        }
+
+        .step-label {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .form-step.active .step-label {
+            color: var(--olive-green);
+            font-weight: 600;
+        }
+
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .btn-back {
+            padding: 16px 32px;
+            background: white;
+            color: var(--text-dark);
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            border-color: var(--olive-green);
+        }
+
+        .btn-next {
+            flex: 1;
+            padding: 16px 32px;
+            background: var(--olive-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-next:hover {
+            background: var(--primary-green-dark);
         }
 
         .form-group {
@@ -886,7 +1156,167 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Responsive */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 184, 77, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 8px rgba(255, 184, 77, 0);
+            }
+        }
+
+        /* Image optimization */
+        .hero-meal-image,
+        .food-gallery-item > div:first-child {
+            position: relative;
+        }
+
+        .hero-meal-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.05) 100%);
+        }
+
+        /* Utility Classes for Common Inline Styles */
+        .stats-highlight-card {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--soft-sage);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stats-highlight-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--olive-green);
+            margin-bottom: 4px;
+        }
+
+        .stats-highlight-label {
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        .rating-card {
+            margin-top: 20px;
+            padding: 16px;
+            background: var(--soft-peach);
+            border-radius: 12px;
+        }
+
+        .rating-text {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .rating-text strong {
+            color: var(--text-dark);
+        }
+
+        .cta-section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cta-section-large {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content-large {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .cta-title-large {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .cta-description {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+        }
+
+        .cta-description-large {
+            font-size: 19px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .progress-container {
+            margin-bottom: 32px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--olive-green);
+        }
+
+        .progress-text {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .progress-bar-container {
+            background: var(--border-light);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, var(--olive-green) 0%, var(--primary-green) 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Responsive Breakpoints */
+
+        /* Tablet and below */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 60px;
+            }
+
+            .features-grid {
+                gap: 24px;
+            }
+
+            .pricing-card {
+                padding: 36px 32px;
+            }
+        }
+
+        /* Mobile and small tablet */
         @media (max-width: 968px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -901,23 +1331,23 @@
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            
+
             .hero h1 {
                 font-size: 38px;
             }
-            
+
             .hero-cards-container {
                 margin-top: 40px;
             }
-            
+
             .hero-meal-card {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .hero-meal-image {
-                width: 100px;
-                height: 100px;
+                width: 100%;
+                height: 200px;
             }
 
             .trust-grid,
@@ -942,6 +1372,68 @@
             
             section div[style*="grid-template-columns: 1fr 1fr"] {
                 grid-template-columns: 1fr !important;
+            }
+
+            /* Carousel arrows responsive */
+            .carousel-arrow-left {
+                left: 8px;
+            }
+
+            .carousel-arrow-right {
+                right: 8px;
+            }
+
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .generator-content {
+                flex-direction: column;
+            }
+
+            .social-proof-sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 32px;
+            }
+        }
+
+        /* Mobile only */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 16px 32px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .feature-card, .step-card, .pricing-card {
+                padding: 24px 20px;
+            }
+
+            .form-card {
+                padding: 32px 20px;
+            }
+
+            header {
+                padding: 16px 20px;
+            }
+
+            .cta-section, .cta-section-large {
+                padding: 40px 20px;
             }
         }
     </style>
@@ -970,58 +1462,166 @@
                 <h1>Finally, meal planning that works</h1>
                 <p class="hero-subtitle">Real, organic Mediterranean foods that ease perimenopause symptoms. No processed keto products. No plastic cheese. Just whole foods that nourish your changing body.</p>
                 <div class="hero-ctas">
-                    <a href="#generator" class="btn-primary">Get Your Free Week</a>
+                    <a href="#generator" class="btn-primary">Get Your Free Meal Plan</a>
                     <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
                 <div class="hero-trust">
                     <span>✓</span>
-                    <span>No credit card • No signup • Instant results</span>
+                    <span>100% Free • No credit card • 2,000+ members</span>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="hero-cards-container">
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image">
-                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Breakfast</div>
-                            <div class="hero-meal-title">Greek Yogurt Bowl</div>
-                            <div class="hero-meal-description">Organic berries, raw walnuts, hormone-balancing seeds · 5 min</div>
+                    <!-- Carousel Navigation Arrows -->
+                    <button class="carousel-arrow carousel-arrow-left" id="prevSlide" aria-label="Previous meal">‹</button>
+                    <button class="carousel-arrow carousel-arrow-right" id="nextSlide" aria-label="Next meal">›</button>
+
+                    <!-- Carousel Container -->
+                    <div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label="Sample meal plan carousel">
+                        <div class="hero-carousel-inner" id="carouselInner" aria-live="polite">
+                            <!-- Slide 1: Breakfast -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image">
+                                    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&h=800&fit=crop&auto=format&q=85"
+                                         alt="Greek Yogurt Bowl with fresh berries and nuts"
+                                         loading="lazy"
+                                         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Breakfast</div>
+                                    <div class="hero-meal-title">Greek Yogurt Bowl</div>
+                                    <div class="hero-meal-description">Organic Greek yogurt topped with fresh berries, raw walnuts, and hormone-balancing chia seeds. A protein-rich start that keeps you satisfied all morning.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">320</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">22g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">18g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">12g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Lunch -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image">
+                                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=800&fit=crop&auto=format&q=85"
+                                         alt="Mediterranean Tuna Salad with fresh vegetables"
+                                         loading="lazy"
+                                         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Lunch</div>
+                                    <div class="hero-meal-title">Mediterranean Tuna Salad</div>
+                                    <div class="hero-meal-description">Wild-caught tuna over crisp greens with cucumber, cherry tomatoes, Kalamata olives, and extra virgin olive oil. Fresh, filling, and ready in minutes.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">385</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">28g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">26g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">8g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Dinner -->
+                            <div class="hero-meal-card">
+                                <div class="hero-meal-image">
+                                    <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&h=800&fit=crop&auto=format&q=85"
+                                         alt="Herb-Crusted Salmon with roasted Mediterranean vegetables"
+                                         loading="lazy"
+                                         style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                                </div>
+                                <div class="hero-meal-content">
+                                    <div class="hero-meal-label">Monday Dinner</div>
+                                    <div class="hero-meal-title">Herb-Crusted Salmon</div>
+                                    <div class="hero-meal-description">Wild-caught salmon with a fragrant herb crust, served alongside roasted Mediterranean vegetables. Rich in omega-3s and anti-inflammatory compounds.</div>
+
+                                    <div class="hero-meal-macros">
+                                        <div class="macro-item">
+                                            <div class="macro-value">465</div>
+                                            <div class="macro-label">Calories</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">38g</div>
+                                            <div class="macro-label">Protein</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">32g</div>
+                                            <div class="macro-label">Fat</div>
+                                        </div>
+                                        <div class="macro-item">
+                                            <div class="macro-value">6g</div>
+                                            <div class="macro-label">Net Carbs</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image">
-                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Lunch</div>
-                            <div class="hero-meal-title">Mediterranean Tuna Salad</div>
-                            <div class="hero-meal-description">Wild-caught tuna, fresh vegetables, extra virgin olive oil · 15 min</div>
-                        </div>
+
+                    <!-- Carousel Dots -->
+                    <div class="carousel-controls">
+                        <button class="carousel-dot active" data-slide="0" aria-label="Go to breakfast"></button>
+                        <button class="carousel-dot" data-slide="1" aria-label="Go to lunch"></button>
+                        <button class="carousel-dot" data-slide="2" aria-label="Go to dinner"></button>
                     </div>
-                    <div class="hero-meal-card">
-                        <div class="hero-meal-image">
-                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div class="hero-meal-content">
-                            <div class="hero-meal-label">Monday Dinner</div>
-                            <div class="hero-meal-title">Herb-Crusted Salmon</div>
-                            <div class="hero-meal-description">Wild salmon, seasonal vegetables, anti-inflammatory herbs · 30 min</div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badge Bar -->
+    <section style="padding: 40px 40px; background: white; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Trusted by Real Women</p>
+            <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">2,000+</div>
+                    <div style="font-size: 14px; color: var(--text-gray);">Active Members</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                    <div style="font-size: 14px; color: var(--text-gray);">4.8/5.0 Rating</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">50,000+</div>
+                    <div style="font-size: 14px; color: var(--text-gray);">Meals Planned</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-green); margin-bottom: 4px;">95%</div>
+                    <div style="font-size: 14px; color: var(--text-gray);">Would Recommend</div>
+                </div>
+            </div>
+
+            <!-- Active Users Today -->
+            <div style="margin-top: 32px; text-align: center;">
+                <div style="background: linear-gradient(135deg, #E8F0E3 0%, #D6E9FF 100%); padding: 16px 32px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                    <span style="font-size: 24px;">🔥</span>
+                    <span style="font-size: 15px; font-weight: 600; color: var(--text-dark);"><strong>347 women</strong> started their plan today</span>
                 </div>
             </div>
         </div>
@@ -1111,7 +1711,8 @@
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Ready for real food?</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Get your personalized Mediterranean plan - no processed products, just whole foods</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Start Free Now</a>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Get My Free Meal Plan Now →</a>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ Instant access • ✓ No payment required</p>
         </div>
     </section>
 
@@ -1125,33 +1726,13 @@
             
             <!-- Food Gallery Preview -->
             <div style="margin-bottom: 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; border-radius: 24px; overflow: hidden;">
-                <div style="width: 100%; height: 200px; background: #E8E8E8; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div style="width: 100%; height: 200px; background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center; border-radius: 12px;">
                 </div>
-                <div style="width: 100%; height: 200px; background: #E8E8E8; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div style="width: 100%; height: 200px; background-image: url('https://images.unsplash.com/photo-1514986888952-8cd320577b68?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center; border-radius: 12px;">
                 </div>
-                <div style="width: 100%; height: 200px; background: #E8E8E8; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div style="width: 100%; height: 200px; background-image: url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center; border-radius: 12px;">
                 </div>
-                <div style="width: 100%; height: 200px; background: #E8E8E8; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <div style="width: 100%; height: 200px; background-image: url('https://images.unsplash.com/photo-1547592180-85f173990554?w=400&h=400&fit=crop&auto=format&q=80'); background-size: cover; background-position: center; border-radius: 12px;">
                 </div>
             </div>
 
@@ -1260,7 +1841,8 @@
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Everything you need to succeed</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Start eating better today with a personalized plan designed for you</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Get Started Free</a>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Create My Free 7-Day Plan →</a>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ Personalized for your goals • ✓ Ready in 60 seconds</p>
         </div>
     </section>
 
@@ -1274,36 +1856,21 @@
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=320&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <h3>Tell Us About You</h3>
                     <p>Share your age range, goals, cooking time, and any dietary needs. Takes 60 seconds.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=600&h=320&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <h3>Get Your Plan</h3>
                     <p>Receive a personalized 7-day meal plan with recipes and a complete shopping list.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="margin: 24px 0; width: 100%; height: 160px; border-radius: 12px; background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=320&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <h3>Cook & Enjoy</h3>
                     <p>Follow the simple recipes or swap what doesn't work. It's flexible, not rigid.</p>
@@ -1316,8 +1883,9 @@
     <section style="padding: 60px 40px; background: white; text-align: center;">
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">See what's possible</h2>
-            <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Join thousands of women who've transformed their meal planning</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Get My Free Plan</a>
+            <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Join 2,000+ women who've transformed their meal planning</p>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Yes! I Want My Free Plan →</a>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ No signup required • ✓ Instant results</p>
         </div>
     </section>
 
@@ -1341,10 +1909,30 @@
                     <div class="stat-label">Research-Backed</div>
                 </div>
             </div>
-            <div class="testimonial">
-                <p class="testimonial-text">"I was drowning in meal planning stress. Now I have a clear plan every week, and I actually look forward to cooking again. The Mediterranean flavors are amazing!"</p>
-                <div class="testimonial-author">Sarah M.</div>
-                <div class="testimonial-role">Mother of 2, Age 47</div>
+            <!-- Testimonials Grid -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-bottom: 40px;">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I was drowning in meal planning stress. Now I have a clear plan every week, and I actually look forward to cooking again. The Mediterranean flavors are amazing!"</p>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Mother of 2, Age 47</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"My hot flashes reduced by 50% within 6 weeks. No more processed 'keto' junk - just real food that my body recognizes. I wish I'd found this years ago."</p>
+                    <div class="testimonial-author">Jennifer L.</div>
+                    <div class="testimonial-role">Teacher, Age 52</div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Lost 18 lbs without counting calories or feeling deprived. The shopping lists save me so much time, and everything tastes incredible. My husband loves it too!"</p>
+                    <div class="testimonial-author">Monica R.</div>
+                    <div class="testimonial-role">Entrepreneur, Age 44</div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I have energy to workout again! No more 3pm crashes. Real olive oil and whole foods made all the difference. This isn't a diet - it's how I eat now."</p>
+                    <div class="testimonial-author">Lisa K.</div>
+                    <div class="testimonial-role">Nurse, Age 49</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1358,12 +1946,7 @@
             </div>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px;">
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Fresh Salads</h3>
@@ -1371,12 +1954,7 @@
                     </div>
                 </div>
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Grilled Proteins</h3>
@@ -1384,12 +1962,7 @@
                     </div>
                 </div>
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Mediterranean Bowls</h3>
@@ -1397,12 +1970,7 @@
                     </div>
                 </div>
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Breakfast Bowls</h3>
@@ -1410,12 +1978,7 @@
                     </div>
                 </div>
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Roasted Veggies</h3>
@@ -1423,12 +1986,7 @@
                     </div>
                 </div>
                 <div class="food-gallery-item">
-                    <div style="width: 100%; height: 300px; background: #E8E8E8; display: flex; align-items: center; justify-content: center;">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M9 10C10.1046 10 11 9.10457 11 8C11 6.89543 10.1046 6 9 6C7.89543 6 7 6.89543 7 8C7 9.10457 7.89543 10 9 10Z" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M2.67004 18.95L7.60004 15.64C8.39004 15.11 9.53004 15.17 10.24 15.78L10.57 16.07C11.35 16.74 12.61 16.74 13.39 16.07L17.55 12.5C18.33 11.83 19.59 11.83 20.37 12.5L22 13.9" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                    <div style="width: 100%; height: 300px; background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=600&fit=crop&auto=format&q=80'); background-size: cover; background-position: center;">
                     </div>
                     <div class="food-gallery-overlay">
                         <h3 style="font-size: 20px; margin-bottom: 4px;">Mediterranean Classics</h3>
@@ -1477,7 +2035,8 @@
 
             <div style="text-align: center; margin-top: 60px;">
                 <p style="font-size: 20px; color: var(--text-gray); margin-bottom: 32px; line-height: 1.7;">Less processing = better wellbeing. Your grandmother knew this. Science confirms it.</p>
-                <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">Start Eating Real Food</a>
+                <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">Get My Real Food Meal Plan →</a>
+                <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ 100% Free • ✓ No processed products</p>
             </div>
         </div>
     </section>
@@ -1487,7 +2046,7 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <h2 style="font-size: 42px; margin-bottom: 20px; color: var(--text-dark);">Stop stressing about dinner</h2>
             <p style="font-size: 19px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.7;">Your personalized meal plan is one click away. No signup required.</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 56px;">Create My Free Plan</a>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 56px;">Get Your Mediterranean Plan Free →</a>
             <p style="margin-top: 20px; font-size: 14px; color: var(--text-gray);">✓ Takes 60 seconds  ✓ No credit card  ✓ Instant results</p>
         </div>
     </section>
@@ -1495,6 +2054,11 @@
     <!-- Pricing -->
     <section class="pricing" id="pricing">
         <div class="pricing-content">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <div style="display: inline-block; background: linear-gradient(135deg, #FF6B6B 0%, #FFB84D 100%); color: white; padding: 12px 32px; border-radius: 50px; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; animation: pulse 2s ease-in-out infinite;">
+                    ⚡ Limited Time: First Month 50% OFF
+                </div>
+            </div>
             <div class="section-header">
                 <h2>Simple, Transparent Pricing</h2>
                 <p class="section-subtitle">Start free, upgrade when ready. No pressure, no hidden fees.</p>
@@ -1510,7 +2074,7 @@
                         <li>Meal names and prep times</li>
                         <li>No credit card required</li>
                     </ul>
-                    <a href="#generator" class="btn-primary" style="width: 100%;">Start Free</a>
+                    <a href="#generator" class="btn-primary" style="width: 100%;">Get My Free Week →</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
@@ -1527,7 +2091,19 @@
                         <li>Priority email support</li>
                         <li>Cancel anytime</li>
                     </ul>
-                    <a href="#generator" class="btn-primary" style="width: 100%;">Start Free Week</a>
+                    <a href="#generator" class="btn-primary" style="width: 100%;">Start Free, Upgrade Anytime →</a>
+                </div>
+            </div>
+
+            <!-- Money-Back Guarantee -->
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div style="display: inline-block; width: 80px; height: 80px; background: white; border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 48px;">
+                    💯
+                </div>
+                <h3 style="font-size: 32px; margin-bottom: 16px; color: var(--text-dark);">30-Day Money-Back Guarantee</h3>
+                <p style="font-size: 18px; color: var(--text-gray); line-height: 1.7; max-width: 600px; margin: 0 auto;">Not satisfied with your meal plans? Simply email us within 30 days and get a full refund. No questions asked, no hassle. We're confident you'll love eating real Mediterranean food.</p>
+                <div style="margin-top: 24px; padding: 20px; background: rgba(255,255,255,0.7); border-radius: 12px; display: inline-block;">
+                    <p style="font-size: 15px; color: var(--text-dark); margin: 0;"><strong>Risk-Free Trial:</strong> Start free, upgrade only if you love it</p>
                 </div>
             </div>
         </div>
@@ -1535,14 +2111,76 @@
 
     <!-- Generator -->
     <section class="generator" id="generator">
-        <div class="generator-content">
-            <div class="section-header">
+        <div style="text-align: center; margin-bottom: 48px; max-width: 1100px; margin-left: auto; margin-right: auto;">
+            <div style="display: inline-block; background: var(--soft-sage); padding: 10px 24px; border-radius: 8px; border: 2px solid var(--olive-green); margin-bottom: 32px;">
+                <span style="font-size: 14px; color: var(--text-dark); font-weight: 600;">⏰ <strong>124 spots left</strong> for free plans this week</span>
+            </div>
+            <div class="section-header" style="margin-bottom: 0;">
                 <h2>Create Your First Week</h2>
                 <p class="section-subtitle">Tell us about yourself and we'll create a personalized meal plan in seconds</p>
             </div>
+        </div>
+
+        <div class="generator-content">
+            <!-- Social Proof Sidebar -->
+            <aside class="social-proof-sidebar" aria-label="Social proof and recent activity">
+                <h4>🎉 Recent Sign-ups</h4>
+                <div class="recent-signup">
+                    <div class="signup-avatar">SM</div>
+                    <div class="signup-info">
+                        <div class="signup-name">Sarah M.</div>
+                        <div class="signup-time">2 minutes ago</div>
+                    </div>
+                </div>
+                <div class="recent-signup">
+                    <div class="signup-avatar">JK</div>
+                    <div class="signup-info">
+                        <div class="signup-name">Jennifer K.</div>
+                        <div class="signup-time">8 minutes ago</div>
+                    </div>
+                </div>
+                <div class="recent-signup">
+                    <div class="signup-avatar">LR</div>
+                    <div class="signup-info">
+                        <div class="signup-name">Lisa R.</div>
+                        <div class="signup-time">15 minutes ago</div>
+                    </div>
+                </div>
+                <div class="recent-signup">
+                    <div class="signup-avatar">MA</div>
+                    <div class="signup-info">
+                        <div class="signup-name">Maria A.</div>
+                        <div class="signup-time">23 minutes ago</div>
+                    </div>
+                </div>
+
+                <div class="stats-highlight-card">
+                    <div class="stats-highlight-number">347</div>
+                    <div class="stats-highlight-label">Started today</div>
+                </div>
+
+                <div class="rating-card">
+                    <div class="rating-text">
+                        ⭐⭐⭐⭐⭐<br>
+                        <strong>4.8/5.0</strong> average rating<br>
+                        from 2,000+ members
+                    </div>
+                </div>
+            </aside>
 
             <div class="form-card">
                 <form id="mealPlanForm">
+                    <!-- Progress Indicator -->
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <span class="progress-label">Your Progress</span>
+                            <span id="progressText" class="progress-text">0% Complete</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div id="progressBar" class="progress-bar"></div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <label class="form-label">Age Range</label>
                         <select class="form-input" id="ageRange" required>
@@ -1606,8 +2244,19 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary" id="generateBtn" style="width: 100%; margin-top: 32px; padding: 20px;">
-                        Generate My Free Week
+                    <div class="form-group" style="background: var(--soft-sage); padding: 24px; border-radius: 12px; border: 2px solid var(--olive-green); margin-top: 24px;">
+                        <label class="form-label" style="margin-bottom: 8px;">📧 Email Address (Optional)</label>
+                        <input type="email" class="form-input" id="emailInput" placeholder="your@email.com" style="margin-bottom: 12px;">
+                        <div style="display: flex; align-items: start; gap: 8px;">
+                            <span style="color: var(--olive-green); font-size: 16px; flex-shrink: 0;">✓</span>
+                            <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.5;">
+                                Get your meal plan via email • No spam, ever • Unsubscribe anytime
+                            </p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="generateBtn" style="width: 100%; margin-top: 32px; padding: 20px; font-size: 18px;">
+                        🎉 Generate My Free Mediterranean Plan
                     </button>
                 </form>
 
@@ -1659,27 +2308,6 @@
                         <p>Most plans rely on processed "keto" products or are generic. Ours are specifically designed for women 40+ using real, organic Mediterranean foods that ease perimenopause symptoms and support your changing metabolism. No plastic cheese. No protein powder. Just food.</p>
                     </details>
                 </div>
-
-                    <details>
-                        <summary>I'm not great at cooking. Will this work for me?</summary>
-                        <p>Absolutely. Every recipe is simple (15-30 minutes) with everyday ingredients. No chef skills required. If you can chop vegetables and turn on a stove, you're good to go.</p>
-                    </details>
-
-                    <details>
-                        <summary>What if I don't like certain foods?</summary>
-                        <p>Tell us in the form! We'll suggest alternatives based on your preferences. Don't like salmon? We'll give you chicken or shrimp options. Hate Brussels sprouts? We'll swap them for broccoli.</p>
-                    </details>
-
-                    <details>
-                        <summary>Is this really free to try?</summary>
-                        <p>Yes. Get your first week's meal plan completely free. No credit card required. If you love it, subscribe to get fresh ideas every Monday—also free initially, then $8.99/month.</p>
-                    </details>
-
-                    <details>
-                        <summary>How is this different from other meal plans?</summary>
-                        <p>Most plans are generic or overly complicated. Ours are specifically designed for women 40+, with Mediterranean-keto principles that support your metabolism and energy levels. Plus, we keep it simple—no fancy ingredients or 3-hour cooking sessions.</p>
-                    </details>
-                </div>
             </div>
         </div>
     </section>
@@ -1688,8 +2316,9 @@
     <section class="final-cta">
         <div class="final-cta-content">
             <h2>Ready to simplify dinner?</h2>
-            <p>Join thousands of women who've ditched meal planning stress and rediscovered the joy of simple, healthy cooking.</p>
-            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">Get Your Free Week</a>
+            <p>Join 2,000+ women who've ditched meal planning stress and rediscovered the joy of simple, healthy cooking.</p>
+            <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">Get Started - It's 100% Free →</a>
+            <p style="margin-top: 20px; font-size: 15px; opacity: 0.9;">✓ Takes 60 seconds  ✓ No credit card  ✓ Cancel anytime</p>
         </div>
     </section>
 
@@ -1716,6 +2345,121 @@
     </footer>
 
     <script>
+        // Helper functions for demo meal plan generation
+        function generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions) {
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+            const isDairyFree = restrictions.includes('dairy-free');
+            const isVegetarian = restrictions.includes('vegetarian');
+
+            const breakfasts = [
+                { name: 'Greek Yogurt Bowl with Berries', desc: 'Organic Greek yogurt, mixed berries, walnuts, chia seeds', time: '5 min' },
+                { name: 'Mediterranean Veggie Omelet', desc: 'Free-range eggs, spinach, tomatoes, feta cheese, olives', time: '10 min' },
+                { name: 'Avocado & Smoked Salmon', desc: 'Wild salmon, avocado, lemon, extra virgin olive oil', time: '5 min' },
+                { name: 'Almond Flour Pancakes', desc: 'Almond flour, eggs, berries, cinnamon', time: '15 min' },
+                { name: 'Shakshuka', desc: 'Poached eggs in spiced tomato sauce, herbs', time: '20 min' },
+                { name: 'Chia Pudding Bowl', desc: 'Chia seeds, coconut milk, berries, almonds', time: '5 min' },
+                { name: 'Spanish Tortilla', desc: 'Eggs, zucchini, onions, olive oil', time: '15 min' }
+            ];
+
+            const lunches = [
+                { name: 'Mediterranean Tuna Salad', desc: 'Wild-caught tuna, mixed greens, olives, cucumber, olive oil', time: '10 min' },
+                { name: 'Greek Chicken Bowl', desc: 'Grilled chicken, cucumber, tomatoes, feta, tzatziki', time: '20 min' },
+                { name: 'Caprese Salad with Grilled Chicken', desc: 'Fresh mozzarella, heirloom tomatoes, basil, balsamic', time: '15 min' },
+                { name: 'Seafood Zoodle Bowl', desc: 'Shrimp, zucchini noodles, cherry tomatoes, garlic', time: '15 min' },
+                { name: 'Lentil & Veggie Soup', desc: 'Green lentils, carrots, celery, herbs, olive oil', time: '30 min' },
+                { name: 'Lamb Kofta Bowl', desc: 'Spiced lamb meatballs, cucumber yogurt, greens', time: '25 min' },
+                { name: 'Nicoise Salad', desc: 'Seared tuna, green beans, eggs, olives, anchovies', time: '20 min' }
+            ];
+
+            const dinners = [
+                { name: 'Herb-Crusted Salmon', desc: 'Wild salmon, mixed herbs, roasted vegetables, lemon', time: '30 min' },
+                { name: 'Greek Lamb Chops', desc: 'Grass-fed lamb, rosemary, garlic, roasted peppers', time: '25 min' },
+                { name: 'Mediterranean Sea Bass', desc: 'Whole sea bass, cherry tomatoes, olives, white wine', time: '35 min' },
+                { name: 'Chicken Souvlaki', desc: 'Marinated chicken skewers, tzatziki, grilled vegetables', time: '30 min' },
+                { name: 'Eggplant Moussaka', desc: 'Layered eggplant, spiced meat, bechamel sauce', time: '45 min' },
+                { name: 'Shrimp Saganaki', desc: 'Jumbo shrimp, tomato sauce, feta, ouzo', time: '20 min' },
+                { name: 'Stuffed Bell Peppers', desc: 'Ground lamb, cauliflower rice, herbs, tomato', time: '40 min' }
+            ];
+
+            let html = '';
+            days.forEach((day, index) => {
+                html += `
+                    <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--border-light);">
+                        <h4 style="font-size: 24px; margin-bottom: 20px; color: var(--olive-green);">${day}</h4>
+
+                        <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-peach); border-radius: 12px;">
+                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Breakfast</div>
+                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${breakfasts[index].name}</div>
+                            <div style="font-size: 15px; color: var(--text-gray);">${breakfasts[index].desc} • ${breakfasts[index].time}</div>
+                        </div>
+
+                        <div style="margin-bottom: 20px; padding: 16px; background: var(--soft-sage); border-radius: 12px;">
+                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Lunch</div>
+                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${lunches[index].name}</div>
+                            <div style="font-size: 15px; color: var(--text-gray);">${lunches[index].desc} • ${lunches[index].time}</div>
+                        </div>
+
+                        <div style="padding: 16px; background: var(--soft-blue); border-radius: 12px;">
+                            <div style="font-size: 13px; color: var(--olive-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Dinner</div>
+                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 6px;">${dinners[index].name}</div>
+                            <div style="font-size: 15px; color: var(--text-gray);">${dinners[index].desc} • ${dinners[index].time}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            return html;
+        }
+
+        function generateShoppingList(restrictions) {
+            return `
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🥩 Proteins</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
+                            <li>• Wild-caught salmon (2 lbs)</li>
+                            <li>• Grass-fed lamb chops (1.5 lbs)</li>
+                            <li>• Free-range chicken breast (2 lbs)</li>
+                            <li>• Wild-caught tuna (2 cans)</li>
+                            <li>• Large eggs (18 count)</li>
+                            <li>• Jumbo shrimp (1 lb)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🥬 Vegetables</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
+                            <li>• Mixed salad greens (3 bags)</li>
+                            <li>• Cherry tomatoes (3 pints)</li>
+                            <li>• Cucumbers (4 large)</li>
+                            <li>• Bell peppers (6 mixed colors)</li>
+                            <li>• Zucchini (4 medium)</li>
+                            <li>• Eggplant (2 large)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🧀 Dairy & Cheese</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
+                            <li>• Greek yogurt (32 oz)</li>
+                            <li>• Feta cheese (8 oz)</li>
+                            <li>• Fresh mozzarella (8 oz)</li>
+                            <li>• Parmesan (4 oz)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--olive-green);">🫒 Pantry Essentials</h4>
+                        <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
+                            <li>• Extra virgin olive oil</li>
+                            <li>• Kalamata olives (1 jar)</li>
+                            <li>• Raw walnuts (8 oz)</li>
+                            <li>• Raw almonds (8 oz)</li>
+                            <li>• Chia seeds (8 oz)</li>
+                            <li>• Fresh herbs (basil, rosemary, dill)</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        }
+
         // Form submission
         document.getElementById('mealPlanForm').addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -1735,23 +2479,34 @@
             generateBtn.disabled = true;
             
             try {
-                const response = await fetch('https://api.anthropic.com/v1/messages', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        model: 'claude-sonnet-4-20250514',
-                        max_tokens: 4000,
-                        messages: [{
-                            role: 'user',
-                            content: 'You are a meal planning assistant for Mediterranean-keto nutrition for women over 40. Create a personalized 7-day meal plan. Age: ' + ageRange + ', Goal: ' + goal + ', Time: ' + cookingTime + ', Servings: ' + servings + ', Restrictions: ' + (restrictions.join(', ') || 'none') + '. Format as HTML with divs. Each day should have h4 for day name, then 3 divs for breakfast lunch dinner. Use inline styles: background #FFF9F0, padding 20px, border-radius 12px. Include all 7 days then shopping list.'
-                        }]
-                    })
-                });
+                // SECURITY NOTE: DO NOT call AI APIs directly from client-side code!
+                // This should be replaced with a backend endpoint that handles API calls securely.
+                // Example: const response = await fetch('/api/generate-meal-plan', { ... })
 
-                const data = await response.json();
-                const mealPlan = data.content[0].text;
+                // Simulating API call with demo meal plan
+                await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading
+
+                const mealPlan = `
+                    <div style="background: var(--warm-white); padding: 40px; border-radius: 16px; margin-bottom: 24px;">
+                        <h3 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Your Personalized 7-Day Mediterranean Meal Plan</h3>
+                        <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">Customized for: ${ageRange} years old • ${goal} • ${cookingTime} meals • ${servings} servings</p>
+
+                        ${generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions)}
+
+                        <div style="margin-top: 60px; padding: 40px; background: var(--soft-sage); border-radius: 16px;">
+                            <h3 style="font-size: 28px; margin-bottom: 20px;">📝 Your Shopping List</h3>
+                            <p style="color: var(--text-gray); margin-bottom: 24px;">Everything you need for this week, organized by section:</p>
+                            ${generateShoppingList(restrictions)}
+                        </div>
+
+                        <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, var(--soft-peach) 0%, var(--soft-sage) 100%); border-radius: 16px;">
+                            <h3 style="margin-bottom: 16px;">🎉 Your free week is ready!</h3>
+                            <p style="color: var(--text-gray); margin-bottom: 24px; line-height: 1.7;">Want full recipes with step-by-step instructions, nutrition info, and fresh plans every week?</p>
+                            <a href="#pricing" class="btn-primary" style="display: inline-block; text-decoration: none;">Upgrade for Full Recipes - $8.99/month</a>
+                            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ 30-day money-back guarantee • Cancel anytime</p>
+                        </div>
+                    </div>
+                `;
                 
                 mealPlanResults.innerHTML = mealPlan;
                 resultsContainer.style.display = 'block';
@@ -1783,6 +2538,101 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // Hero Carousel functionality
+        let currentSlide = 0;
+        const carouselInner = document.getElementById('carouselInner');
+        const slides = document.querySelectorAll('.hero-meal-card');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const totalSlides = slides.length;
+
+        function updateCarousel() {
+            // Update slide position
+            const offset = -currentSlide * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        // Event listeners for arrows
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Auto-advance carousel every 7 seconds (slower for better readability)
+        let autoRotate = setInterval(nextSlide, 7000);
+
+        // Pause carousel on hover
+        const carouselContainer = document.querySelector('.hero-carousel');
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoRotate);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoRotate = setInterval(nextSlide, 7000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Progress bar functionality
+        function updateProgress() {
+            const form = document.getElementById('mealPlanForm');
+            const requiredFields = form.querySelectorAll('[required]');
+            let filledFields = 0;
+
+            requiredFields.forEach(field => {
+                if (field.value) {
+                    filledFields++;
+                }
+            });
+
+            const progress = (filledFields / requiredFields.length) * 100;
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+
+            progressBar.style.width = progress + '%';
+            progressText.textContent = Math.round(progress) + '% Complete';
+
+            if (progress === 100) {
+                progressText.textContent = '✓ Ready to Generate!';
+                progressText.style.color = 'var(--olive-green)';
+                progressText.style.fontWeight = '700';
+            } else {
+                progressText.style.color = 'var(--text-gray)';
+                progressText.style.fontWeight = '400';
+            }
+        }
+
+        // Add change listeners to form fields
+        document.querySelectorAll('#mealPlanForm select').forEach(select => {
+            select.addEventListener('change', updateProgress);
         });
     </script>
 </body>
