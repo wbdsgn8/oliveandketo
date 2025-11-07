@@ -59,6 +59,81 @@
             height: 80px;
         }
 
+        .icon-inline {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .icon-small {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Elegant background patterns */
+        .bg-pattern-leaves {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-pattern-leaves::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(139, 157, 131, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(214, 233, 255, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(232, 240, 227, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-pattern-leaves::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M36 34c-4 0-6-3-6-6 0-4 2-8 6-8s8 2 8 6c0 3-4 8-8 8zm0-12c-2.5 0-4 2.5-4 6s1 4 4 4c3 0 6-3 6-6s-3-4-6-4z' fill='%238B9D83' fill-opacity='0.02'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+            animation: float-leaves 120s linear infinite;
+        }
+
+        @keyframes float-leaves {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .bg-pattern-spots {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-pattern-spots::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(255, 214, 224, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 85% 80%, rgba(214, 233, 255, 0.12) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(232, 240, 227, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 25% 75%, rgba(196, 165, 123, 0.08) 0%, transparent 20%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
         h1, h2, h3, h4 {
             font-family: 'DM Serif Display', serif;
             line-height: 1.2;
@@ -1448,6 +1523,89 @@
 </head>
 <body>
 
+    <!-- SVG Icon Definitions -->
+    <svg style="display: none;" aria-hidden="true">
+        <defs>
+            <!-- Gradient definitions -->
+            <linearGradient id="iconGradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8B9D83;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D6E9FF;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="iconGradientWarm" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C4A57B;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#FFD6E0;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="iconGradientSage" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#8B9D83;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#E8F0E3;stop-opacity:1" />
+            </linearGradient>
+
+            <!-- Package/Box icon -->
+            <symbol id="icon-package" viewBox="0 0 24 24">
+                <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M12 3V7" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Shopping bag/takeout icon -->
+            <symbol id="icon-bag" viewBox="0 0 24 24">
+                <path d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M3 6H21" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Restaurant/food icon -->
+            <symbol id="icon-food" viewBox="0 0 24 24">
+                <path d="M18 8H22V21C22 21.5304 21.7893 22.0391 21.4142 22.4142C21.0391 22.7893 20.5304 23 20 23C19.4696 23 18.9609 22.7893 18.5858 22.4142C18.2107 22.0391 18 21.5304 18 21V8Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M6 8V1M2 8V1M10 8V1M6 8C6 10.1217 5.15714 12.1566 3.65685 13.6569C2.15656 15.1571 0.121739 16 -2 16V23C-2 23.5304 -1.78929 24.0391 -1.41421 24.4142C-1.03914 24.7893 -0.530433 25 0 25C0.530433 25 1.03914 24.7893 1.41421 24.4142C1.78929 24.0391 2 23.5304 2 23V16C4.12173 16 6.15656 15.1571 7.65685 13.6569C9.15714 12.1566 10 10.1217 10 8Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Olive branch icon -->
+            <symbol id="icon-olive" viewBox="0 0 24 24">
+                <path d="M12 2C12 2 8 4 8 8C8 10 9 11 9 11C9 11 7 11 7 13C7 15 9 16 9 16C9 16 7 16 7 18C7 20 9 22 12 22C15 22 17 20 17 18C17 16 15 16 15 16C15 16 17 15 17 13C17 11 15 11 15 11C15 11 16 10 16 8C16 4 12 2 12 2Z" stroke="url(#iconGradientSage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="10" cy="9" r="1.5" fill="url(#iconGradientSage)"/>
+                <circle cx="14" cy="13" r="1.5" fill="url(#iconGradientSage)"/>
+            </symbol>
+
+            <!-- Coffee cup icon -->
+            <symbol id="icon-coffee" viewBox="0 0 24 24">
+                <path d="M17 8H18C19.0609 8 20.0783 8.42143 20.8284 9.17157C21.5786 9.92172 22 10.9391 22 12C22 13.0609 21.5786 14.0783 20.8284 14.8284C20.0783 15.5786 19.0609 16 18 16H17" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M5 8H17V17C17 18.0609 16.5786 19.0783 15.8284 19.8284C15.0783 20.5786 14.0609 21 13 21H9C7.93913 21 6.92172 20.5786 6.17157 19.8284C5.42143 19.0783 5 18.0609 5 17V8Z" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 2L9 5M12 2L13 5M16 2L17 5" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Checkmark icon -->
+            <symbol id="icon-check" viewBox="0 0 24 24">
+                <path d="M20 6L9 17L4 12" stroke="url(#iconGradientMain)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </symbol>
+
+            <!-- Clock/timer icon -->
+            <symbol id="icon-clock" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="url(#iconGradientMain)" stroke-width="1.5" fill="none"/>
+                <path d="M12 6V12L16 14" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Sparkles/celebration icon -->
+            <symbol id="icon-sparkle" viewBox="0 0 24 24">
+                <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M19 4L19.5 6L21.5 6.5L19.5 7L19 9L18.5 7L16.5 6.5L18.5 6L19 4Z" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 15L6.5 17L8.5 17.5L6.5 18L6 20L5.5 18L3.5 17.5L5.5 17L6 15Z" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+
+            <!-- Heart icon -->
+            <symbol id="icon-heart" viewBox="0 0 24 24">
+                <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69365 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69365 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99872 7.05 2.99872C5.59096 2.99872 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="url(#iconGradientWarm)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </symbol>
+
+            <!-- Badge/award icon -->
+            <symbol id="icon-badge" viewBox="0 0 24 24">
+                <circle cx="12" cy="10" r="7" stroke="url(#iconGradientMain)" stroke-width="1.5" fill="none"/>
+                <path d="M12 17L8 22L9 18L6 16L12 17Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M12 17L16 22L15 18L18 16L12 17Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 7L12.5 9L14.5 9.5L12.5 10L12 12L11.5 10L9.5 9.5L11.5 9L12 7Z" stroke="url(#iconGradientMain)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </symbol>
+        </defs>
+    </svg>
+
     <!-- Header -->
     <header>
         <div class="header-content">
@@ -1463,7 +1621,7 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero bg-pattern-leaves">
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badge">For Women 40+</div>
@@ -1474,7 +1632,7 @@
                     <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
                 <div class="hero-trust">
-                    <span>✓</span>
+                    <svg style="width: 18px; height: 18px; flex-shrink: 0;"><use href="#icon-check"/></svg>
                     <span>100% Free • No credit card • Start in 60 seconds</span>
                 </div>
             </div>
@@ -1628,7 +1786,7 @@
     </section>
 
     <!-- Trust Section -->
-    <section class="trust-section">
+    <section class="trust-section bg-pattern-spots">
         <div class="trust-content">
             <p class="trust-title">Real Food, Real Results: The Mediterranean Advantage</p>
             <div class="trust-grid">
@@ -1747,7 +1905,10 @@
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Ready for real food?</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Get your personalized Mediterranean plan - no processed products, just whole foods</p>
             <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Get My Free Meal Plan Now →</a>
-            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ Instant access • ✓ No payment required</p>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Instant access •
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> No payment required
+            </p>
         </div>
     </section>
 
@@ -1877,7 +2038,10 @@
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Everything you need to succeed</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Start eating better today with a personalized plan designed for you</p>
             <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Create My Free 3-Day Plan →</a>
-            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ Personalized for your goals • ✓ Ready in 60 seconds</p>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Personalized for your goals •
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Ready in 60 seconds
+            </p>
         </div>
     </section>
 
@@ -1924,25 +2088,33 @@
 
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;">
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="font-size: 48px; margin-bottom: 16px;">3️⃣</div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); box-shadow: 0 4px 12px rgba(107, 140, 174, 0.3);">
+                        <span style="font-size: 32px; font-weight: 700; color: white;">3</span>
+                    </div>
                     <div style="font-size: 24px; font-weight: 700; color: var(--accent-blue); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Less bloated. No more 3pm sugar cravings. Clearer thinking.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="font-size: 48px; margin-bottom: 16px;">7️⃣</div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #9BAA96 0%, #E8F0E3 100%); box-shadow: 0 4px 12px rgba(155, 170, 150, 0.3);">
+                        <span style="font-size: 32px; font-weight: 700; color: white;">7</span>
+                    </div>
                     <div style="font-size: 24px; font-weight: 700; color: var(--accent-sage); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Better sleep. Waking up refreshed instead of groggy.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="font-size: 48px; margin-bottom: 16px;">1️⃣4️⃣</div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); box-shadow: 0 4px 12px rgba(107, 140, 174, 0.3);">
+                        <span style="font-size: 32px; font-weight: 700; color: white;">14</span>
+                    </div>
                     <div style="font-size: 24px; font-weight: 700; color: var(--accent-blue); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Sustained energy. Playing with kids/grandkids without exhaustion.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="font-size: 48px; margin-bottom: 16px;">3️⃣0️⃣</div>
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #9BAA96 0%, #E8F0E3 100%); box-shadow: 0 4px 12px rgba(155, 170, 150, 0.3);">
+                        <span style="font-size: 32px; font-weight: 700; color: white;">30</span>
+                    </div>
                     <div style="font-size: 24px; font-weight: 700; color: var(--accent-sage); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Pants fit better. You feel like YOU again. Not perfect - just better.</p>
                 </div>
@@ -1960,12 +2132,15 @@
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">See what's possible</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Join 2,000+ women who've transformed their meal planning</p>
             <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 18px 48px;">Yes! I Want My Free Plan →</a>
-            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ No signup required • ✓ Instant results</p>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> No signup required •
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Instant results
+            </p>
         </div>
     </section>
 
     <!-- Social Proof -->
-    <section class="social-proof">
+    <section class="social-proof bg-pattern-spots">
         <div class="proof-content">
             <div class="section-header">
                 <h2>Trusted by Women Over 40</h2>
@@ -2096,7 +2271,9 @@
 
                 <!-- Right: Mediterranean -->
                 <div style="padding: 40px; background: var(--soft-sage); border-radius: 16px; border: 2px solid var(--accent-sage);">
-                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--accent-sage);">✓ Mediterranean Whole Foods</h3>
+                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--accent-sage); display: flex; align-items: center; gap: 8px;">
+                        <svg style="width: 28px; height: 28px;"><use href="#icon-check"/></svg> Mediterranean Whole Foods
+                    </h3>
                     <ul style="list-style: none; font-size: 17px; line-height: 2; color: var(--text-dark);">
                         <li style="margin-bottom: 16px;"><strong>Real cheese from sheep/goat</strong> - easier digestion, complete nutrition</li>
                         <li style="margin-bottom: 16px;"><strong>Wild-caught fish</strong> - omega-3s for brain fog & hot flashes</li>
@@ -2111,7 +2288,10 @@
             <div style="text-align: center; margin-top: 60px;">
                 <p style="font-size: 20px; color: var(--text-gray); margin-bottom: 32px; line-height: 1.7;">Less processing = better wellbeing. Your grandmother knew this. Science confirms it.</p>
                 <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 48px;">Get My Real Food Meal Plan →</a>
-                <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ 100% Free • ✓ No processed products</p>
+                <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                    <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> 100% Free •
+                    <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> No processed products
+                </p>
             </div>
         </div>
     </section>
@@ -2122,12 +2302,16 @@
             <h2 style="font-size: 42px; margin-bottom: 20px; color: var(--text-dark);">Stop stressing about dinner</h2>
             <p style="font-size: 19px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.7;">Your personalized meal plan is one click away. No signup required.</p>
             <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 20px 56px;">Get Your Mediterranean Plan Free →</a>
-            <p style="margin-top: 20px; font-size: 14px; color: var(--text-gray);">✓ Takes 60 seconds  ✓ No credit card  ✓ Instant results</p>
+            <p style="margin-top: 20px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Takes 60 seconds
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> No credit card
+                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> Instant results
+            </p>
         </div>
     </section>
 
     <!-- Pricing -->
-    <section class="pricing" id="pricing">
+    <section class="pricing bg-pattern-leaves" id="pricing">
         <div class="pricing-content">
             <!-- Price Comparison -->
             <div style="max-width: 1000px; margin: 0 auto 60px; padding: 48px; background: linear-gradient(135deg, #FFF4F4 0%, #FFE8E8 100%); border-radius: 24px; box-shadow: 0 8px 32px rgba(214, 69, 69, 0.15); border: 2px solid #FFD6D6;">
@@ -2140,7 +2324,9 @@
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
                     <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #FFD6D6; position: relative; overflow: hidden;">
                         <div style="position: absolute; top: -30px; right: -30px; width: 80px; height: 80px; background: #D64545; opacity: 0.1; border-radius: 50%;"></div>
-                        <div style="font-size: 42px; margin-bottom: 12px;">📦</div>
+                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
+                            <svg style="width: 48px; height: 48px;"><use href="#icon-package"/></svg>
+                        </div>
                         <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Keto protein bars</p>
                         <div style="position: relative; display: inline-block;">
                             <p style="font-size: 36px; font-weight: 800; color: #D64545; margin: 0; line-height: 1;">$45</p>
@@ -2151,7 +2337,9 @@
 
                     <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #FFD6D6; position: relative; overflow: hidden;">
                         <div style="position: absolute; top: -30px; right: -30px; width: 80px; height: 80px; background: #D64545; opacity: 0.1; border-radius: 50%;"></div>
-                        <div style="font-size: 42px; margin-bottom: 12px;">🥡</div>
+                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
+                            <svg style="width: 48px; height: 48px;"><use href="#icon-bag"/></svg>
+                        </div>
                         <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Meal kit delivery</p>
                         <div style="position: relative; display: inline-block;">
                             <p style="font-size: 36px; font-weight: 800; color: #D64545; margin: 0; line-height: 1;">$120</p>
@@ -2162,7 +2350,9 @@
 
                     <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #FFD6D6; position: relative; overflow: hidden;">
                         <div style="position: absolute; top: -30px; right: -30px; width: 80px; height: 80px; background: #D64545; opacity: 0.1; border-radius: 50%;"></div>
-                        <div style="font-size: 42px; margin-bottom: 12px;">🍔</div>
+                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
+                            <svg style="width: 48px; height: 48px;"><use href="#icon-food"/></svg>
+                        </div>
                         <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Takeout (3x/week)</p>
                         <div style="position: relative; display: inline-block;">
                             <p style="font-size: 36px; font-weight: 800; color: #D64545; margin: 0; line-height: 1;">$180</p>
@@ -2182,14 +2372,17 @@
 
                 <!-- Olive&Keto Price -->
                 <div style="background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); padding: 32px; border-radius: 20px; text-align: center; box-shadow: 0 8px 24px rgba(95, 122, 97, 0.2); border: 3px solid var(--olive-green);">
-                    <div style="font-size: 48px; margin-bottom: 12px;">🫒</div>
+                    <div style="margin-bottom: 12px; display: flex; justify-content: center;">
+                        <svg style="width: 56px; height: 56px;"><use href="#icon-olive"/></svg>
+                    </div>
                     <p style="font-size: 18px; color: var(--text-dark); margin-bottom: 16px; font-weight: 700;">Olive&Keto</p>
                     <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 12px;">
                         <span style="font-size: 56px; font-weight: 800; color: var(--olive-green); line-height: 1;">$8.99</span>
                         <span style="font-size: 20px; color: var(--text-gray);">/month</span>
                     </div>
-                    <div style="display: inline-block; background: white; padding: 12px 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        <p style="font-size: 15px; color: var(--text-dark); margin: 0;"><strong>That's less than 1 coffee per week</strong> ☕</p>
+                    <div style="display: inline-flex; align-items: center; gap: 8px; background: white; padding: 12px 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <p style="font-size: 15px; color: var(--text-dark); margin: 0;"><strong>That's less than 1 coffee per week</strong></p>
+                        <svg style="width: 20px; height: 20px;"><use href="#icon-coffee"/></svg>
                     </div>
                     <p style="font-size: 13px; color: var(--text-gray); margin-top: 16px; margin-bottom: 0;">+ Fresh meal plans • Real food • Zero processed junk</p>
                 </div>
@@ -2221,15 +2414,15 @@
                     <div class="pricing-price">$8.99</div>
                     <div class="pricing-period">per month</div>
                     <ul class="pricing-features">
-                        <li>✓ Fresh meal plans every week</li>
-                        <li>✓ Complete step-by-step recipes</li>
-                        <li>✓ Organized shopping lists</li>
-                        <li>✓ Printable PDFs (kitchen-ready)</li>
-                        <li>✓ Meal swap suggestions</li>
-                        <li>✓ Seasonal recipe variations</li>
-                        <li>✓ Access to past weeks' plans</li>
-                        <li>✓ Weekly Monday motivation email</li>
-                        <li>✓ Cancel anytime, no hassle</li>
+                        <li>Fresh meal plans every week</li>
+                        <li>Complete step-by-step recipes</li>
+                        <li>Organized shopping lists</li>
+                        <li>Printable PDFs (kitchen-ready)</li>
+                        <li>Meal swap suggestions</li>
+                        <li>Seasonal recipe variations</li>
+                        <li>Access to past weeks' plans</li>
+                        <li>Weekly Monday motivation email</li>
+                        <li>Cancel anytime, no hassle</li>
                     </ul>
                     <a href="#generator" class="btn-primary" style="width: 100%;">Start Free, Upgrade Anytime →</a>
                 </div>
@@ -2237,8 +2430,8 @@
 
             <!-- Money-Back Guarantee -->
             <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <div style="display: inline-block; width: 80px; height: 80px; background: white; border-radius: 50%; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 48px;">
-                    💯
+                <div style="display: inline-flex; width: 80px; height: 80px; background: white; border-radius: 50%; margin-bottom: 20px; align-items: center; justify-content: center;">
+                    <svg style="width: 48px; height: 48px;"><use href="#icon-badge"/></svg>
                 </div>
                 <h3 style="font-size: 32px; margin-bottom: 16px; color: var(--text-dark);">30-Day Money-Back Guarantee</h3>
                 <p style="font-size: 18px; color: var(--text-gray); line-height: 1.7; max-width: 600px; margin: 0 auto;">Not satisfied with your meal plans? Simply email us within 30 days and get a full refund. No questions asked, no hassle. We're confident you'll love eating real Mediterranean food.</p>
@@ -2250,7 +2443,7 @@
     </section>
 
     <!-- Generator -->
-    <section class="generator" id="generator">
+    <section class="generator bg-pattern-leaves" id="generator">
         <div style="text-align: center; margin-bottom: 48px; max-width: 1100px; margin-left: auto; margin-right: auto;">
             <div class="section-header" style="margin-bottom: 0;">
                 <h2>Create Your Free 3-Day Trial</h2>
@@ -2261,7 +2454,10 @@
         <div class="generator-content">
             <!-- Social Proof Sidebar -->
             <aside class="social-proof-sidebar" aria-label="Social proof and recent activity">
-                <h4>💚 Trusted by Real Women</h4>
+                <h4 style="display: flex; align-items: center; gap: 8px;">
+                    <svg style="width: 20px; height: 20px;"><use href="#icon-heart"/></svg>
+                    Trusted by Real Women
+                </h4>
 
                 <div style="padding: 20px; background: white; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                     <p style="font-size: 14px; line-height: 1.6; color: var(--text-dark); margin-bottom: 12px; font-style: italic;">"Finally meal planning doesn't stress me out!"</p>
@@ -2374,8 +2570,9 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary" id="generateBtn" style="width: 100%; margin-top: 32px; padding: 20px; font-size: 18px;">
-                        🎉 Generate My Free 3-Day Plan
+                    <button type="submit" class="btn-primary" id="generateBtn" style="width: 100%; margin-top: 32px; padding: 20px; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <svg style="width: 20px; height: 20px;"><use href="#icon-sparkle"/></svg>
+                        Generate My Free 3-Day Plan
                     </button>
                 </form>
 
@@ -2615,7 +2812,9 @@
                         <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-peach); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                                 <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Breakfast</div>
-                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${breakfast.time}</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
+                                    <svg style="width: 14px; height: 14px;"><use href="#icon-clock"/></svg> ${breakfast.time}
+                                </div>
                             </div>
                             <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${breakfast.name}</div>
 
@@ -2650,7 +2849,9 @@
                         <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-sage); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                                 <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Lunch</div>
-                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${lunch.time}</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
+                                    <svg style="width: 14px; height: 14px;"><use href="#icon-clock"/></svg> ${lunch.time}
+                                </div>
                             </div>
                             <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${lunch.name}</div>
 
@@ -2685,7 +2886,9 @@
                         <div style="padding: 20px; background: var(--soft-blue); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                                 <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Dinner</div>
-                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px;">⏱️ ${dinner.time}</div>
+                                <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
+                                    <svg style="width: 14px; height: 14px;"><use href="#icon-clock"/></svg> ${dinner.time}
+                                </div>
                             </div>
                             <div style="font-size: 20px; font-weight: 600; margin-bottom: 14px; color: var(--text-dark);">${dinner.name}</div>
 
@@ -2820,10 +3023,15 @@
                         ${generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions)}
 
                         <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, var(--soft-peach) 0%, var(--soft-sage) 100%); border-radius: 16px;">
-                            <h3 style="margin-bottom: 16px;">🎉 Your free 3-day plan is ready!</h3>
+                            <h3 style="margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <svg style="width: 28px; height: 28px;"><use href="#icon-sparkle"/></svg>
+                                Your free 3-day plan is ready!
+                            </h3>
                             <p style="color: var(--text-gray); margin-bottom: 24px; line-height: 1.7;">Love it? Upgrade for full recipes, shopping lists, and fresh plans every week!</p>
                             <a href="#pricing" class="btn-primary" style="display: inline-block; text-decoration: none;">Upgrade for Full Access - $8.99/month</a>
-                            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray);">✓ 30-day money-back guarantee • Cancel anytime</p>
+                            <p style="margin-top: 16px; font-size: 14px; color: var(--text-gray); display: flex; align-items: center; justify-content: center; gap: 4px;">
+                                <svg style="width: 16px; height: 16px;"><use href="#icon-check"/></svg> 30-day money-back guarantee • Cancel anytime
+                            </p>
                         </div>
                     </div>
                 `;
