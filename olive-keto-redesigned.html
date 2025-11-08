@@ -92,9 +92,9 @@
             right: 0;
             bottom: 0;
             background-image:
-                radial-gradient(circle at 20% 30%, rgba(139, 157, 131, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(214, 233, 255, 0.07) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(232, 240, 227, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(139, 157, 131, 0.20) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(214, 233, 255, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(232, 240, 227, 0.30) 0%, transparent 50%);
             pointer-events: none;
             z-index: -2;
         }
@@ -106,7 +106,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.08'%3E%3Cellipse cx='30' cy='40' rx='12' ry='20' fill='%238B9D83'/%3E%3Cellipse cx='25' cy='35' rx='8' ry='14' fill='%238B9D83'/%3E%3Cellipse cx='70' cy='80' rx='14' ry='22' fill='%235F7A61'/%3E%3Cellipse cx='75' cy='75' rx='9' ry='16' fill='%235F7A61'/%3E%3Cellipse cx='90' cy='25' rx='10' ry='18' fill='%239BAA96'/%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.30'%3E%3Cellipse cx='30' cy='40' rx='12' ry='20' fill='%238B9D83'/%3E%3Cellipse cx='25' cy='35' rx='8' ry='14' fill='%238B9D83'/%3E%3Cellipse cx='70' cy='80' rx='14' ry='22' fill='%235F7A61'/%3E%3Cellipse cx='75' cy='75' rx='9' ry='16' fill='%235F7A61'/%3E%3Cellipse cx='90' cy='25' rx='10' ry='18' fill='%239BAA96'/%3E%3C/g%3E%3C/svg%3E");
             background-size: 240px 240px;
             pointer-events: none;
             z-index: -1;
@@ -1547,37 +1547,41 @@
 
             <!-- Package/Box icon -->
             <symbol id="icon-package" viewBox="0 0 24 24">
-                <rect x="6" y="8" width="12" height="10" rx="1" fill="none" stroke="#5F7A61" stroke-width="2"/>
-                <path d="M6 10 L12 7 L18 10" fill="none" stroke="#5F7A61" stroke-width="2" stroke-linejoin="round"/>
-                <line x1="12" y1="7" x2="12" y2="13" stroke="#5F7A61" stroke-width="2"/>
+                <circle cx="12" cy="12" r="9" fill="#5F7A61" opacity="0.12"/>
+                <rect x="8" y="9" width="8" height="8" rx="1" fill="#5F7A61"/>
+                <rect x="10" y="7" width="4" height="3" rx="0.5" fill="#8B9D83"/>
             </symbol>
 
             <!-- Shopping bag/takeout icon -->
             <symbol id="icon-bag" viewBox="0 0 24 24">
-                <path d="M6 9 L6 18 C6 18.5 6.5 19 7 19 L17 19 C17.5 19 18 18.5 18 18 L18 9 L6 9 Z" fill="none" stroke="#5F7A61" stroke-width="2"/>
-                <path d="M9 9 L9 7 C9 5.3 10.3 4 12 4 C13.7 4 15 5.3 15 7 L15 9" fill="none" stroke="#5F7A61" stroke-width="2"/>
+                <circle cx="12" cy="12" r="9" fill="#5F7A61" opacity="0.12"/>
+                <rect x="7" y="10" width="10" height="8" rx="1.5" fill="#5F7A61"/>
+                <path d="M9.5 10 C9.5 8.5 10.5 7 12 7 C13.5 7 14.5 8.5 14.5 10" fill="#8B9D83"/>
             </symbol>
 
             <!-- Restaurant/food icon -->
             <symbol id="icon-food" viewBox="0 0 24 24">
-                <circle cx="12" cy="14" r="6" fill="none" stroke="#5F7A61" stroke-width="2"/>
-                <path d="M7 6 L8 10 M11 5 L11 10 M15 6 L14 10" stroke="#5F7A61" stroke-width="2" stroke-linecap="round"/>
-                <line x1="6" y1="14" x2="18" y2="14" stroke="#5F7A61" stroke-width="2"/>
+                <circle cx="12" cy="12" r="9" fill="#5F7A61" opacity="0.12"/>
+                <circle cx="12" cy="14" r="5.5" fill="#5F7A61"/>
+                <rect x="10" y="6" width="1.5" height="5" rx="0.7" fill="#8B9D83"/>
+                <rect x="12.5" y="6" width="1.5" height="5" rx="0.7" fill="#8B9D83"/>
             </symbol>
 
             <!-- Olive branch icon -->
             <symbol id="icon-olive" viewBox="0 0 24 24">
-                <path d="M12 4 Q11 7 10 10 M12 4 Q13 7 14 13 M12 4 Q12 8 15 16" stroke="#8B9D83" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <ellipse cx="10" cy="10" rx="2" ry="3" fill="none" stroke="#8B9D83" stroke-width="1.5"/>
-                <ellipse cx="14" cy="13" rx="2" ry="3" fill="none" stroke="#8B9D83" stroke-width="1.5"/>
-                <ellipse cx="15" cy="16" rx="1.5" ry="2.5" fill="none" stroke="#8B9D83" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="9" fill="#8B9D83" opacity="0.12"/>
+                <ellipse cx="10" cy="11" rx="2.5" ry="4" fill="#8B9D83"/>
+                <ellipse cx="14" cy="13" rx="2.5" ry="4" fill="#8B9D83"/>
+                <rect x="11.5" y="5" width="1" height="8" rx="0.5" fill="#9BAA96"/>
             </symbol>
 
             <!-- Coffee cup icon -->
             <symbol id="icon-coffee" viewBox="0 0 24 24">
-                <rect x="6" y="9" width="10" height="9" rx="2" fill="none" stroke="#C4A57B" stroke-width="2"/>
-                <path d="M16 11 L17 11 C18 11 19 12 19 13 C19 14 18 15 17 15 L16 15" fill="none" stroke="#C4A57B" stroke-width="2"/>
-                <path d="M8 6 L8 8 M11 6 L11 8 M14 6 L14 8" stroke="#C4A57B" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="9" fill="#C4A57B" opacity="0.12"/>
+                <rect x="7" y="10" width="9" height="8" rx="1.5" fill="#C4A57B"/>
+                <circle cx="16.5" cy="13" r="1.5" fill="#9BAA96"/>
+                <rect x="9" y="6" width="1" height="3" rx="0.5" fill="#9BAA96"/>
+                <rect x="12" y="6" width="1" height="3" rx="0.5" fill="#9BAA96"/>
             </symbol>
 
             <!-- Checkmark icon -->
@@ -1605,9 +1609,10 @@
 
             <!-- Badge/award icon -->
             <symbol id="icon-badge" viewBox="0 0 24 24">
-                <circle cx="12" cy="9" r="6" fill="none" stroke="#5F7A61" stroke-width="2"/>
-                <path d="M9 14 L8 20 L12 17 L16 20 L15 14" fill="none" stroke="#5F7A61" stroke-width="2" stroke-linejoin="round"/>
-                <circle cx="12" cy="9" r="2.5" fill="none" stroke="#5F7A61" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="9" fill="#5F7A61" opacity="0.12"/>
+                <circle cx="12" cy="10" r="5" fill="#5F7A61"/>
+                <path d="M9 14 L8.5 18 L12 16 L15.5 18 L15 14" fill="#8B9D83"/>
+                <circle cx="12" cy="10" r="2" fill="#E8F0E3"/>
             </symbol>
         </defs>
     </svg>
