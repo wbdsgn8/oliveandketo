@@ -110,9 +110,14 @@
             background-size: 800px 800px;
             background-repeat: repeat;
             pointer-events: none;
-            z-index: 1;
+            z-index: 0;
             filter: blur(5px);
             animation: float-lights 80s ease-in-out infinite, color-shift 12s ease-in-out infinite alternate;
+        }
+
+        .bg-pattern-leaves > * {
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes float-lights {
@@ -2359,74 +2364,52 @@
     <section class="pricing" id="pricing">
         <div class="pricing-content">
             <!-- Price Comparison -->
-            <div style="max-width: 1000px; margin: 0 auto 60px; padding: 48px; background: #E8DCC8; border-radius: 24px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); border: 2px solid #C4A57B;">
-                <div style="text-align: center; margin-bottom: 32px;">
-                    <div style="display: inline-block; background: #C4856B; color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;">Reality Check</div>
-                    <h3 style="font-size: 32px; margin-bottom: 12px; color: var(--text-dark); font-weight: 700;">What You're Probably Spending Now</h3>
-                    <p style="font-size: 17px; color: var(--text-gray); margin: 0;">Let's be honest about the hidden costs...</p>
+            <div style="max-width: 900px; margin: 0 auto 60px;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h3 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark); font-weight: 700;">What You're Probably Spending Now</h3>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
-                    <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #C4A57B; position: relative; overflow: hidden;">
-                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
-                            <div style="width: 64px; height: 64px; border-radius: 12px; background: #8B7355; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 32px;">🍫</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+                    <!-- Left: Traditional costs -->
+                    <div style="background: #F5EFE6; padding: 40px; border-radius: 20px;">
+                        <div style="margin-bottom: 24px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                                <span style="font-size: 16px; color: #6B5D52;">🍫 Protein bars</span>
+                                <span style="font-size: 24px; font-weight: 700; color: #8B7355;">$45</span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                                <span style="font-size: 16px; color: #6B5D52;">📦 Meal kits</span>
+                                <span style="font-size: 24px; font-weight: 700; color: #8B7355;">$120</span>
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                                <span style="font-size: 16px; color: #6B5D52;">🍔 Takeout</span>
+                                <span style="font-size: 24px; font-weight: 700; color: #8B7355;">$180</span>
+                            </div>
                         </div>
-                        <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Keto protein bars</p>
-                        <div style="position: relative; display: inline-block;">
-                            <p style="font-size: 36px; font-weight: 800; color: #C4856B; margin: 0; line-height: 1;">$45</p>
-                            <div style="position: absolute; top: 50%; left: -10%; right: -10%; height: 3px; background: #C4856B; transform: rotate(-8deg);"></div>
+                        <div style="border-top: 2px solid #D4C4B0; padding-top: 16px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <span style="font-size: 18px; font-weight: 700; color: var(--text-dark);">Total per month</span>
+                                <span style="font-size: 32px; font-weight: 800; color: #8B7355;">$345</span>
+                            </div>
                         </div>
-                        <p style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">/month</p>
                     </div>
 
-                    <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #C4A57B; position: relative; overflow: hidden;">
-                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
-                            <div style="width: 64px; height: 64px; border-radius: 12px; background: #8B7355; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 32px;">📦</div>
+                    <!-- Right: Olive&Keto -->
+                    <div style="background: linear-gradient(135deg, #E8F4E5 0%, #DBE9F0 100%); padding: 40px; border-radius: 20px; border: 3px solid var(--olive-green);">
+                        <div style="text-align: center;">
+                            <div style="margin-bottom: 12px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 48px; height: 48px;"><use xlink:href="#icon-olive"/></svg>
+                            </div>
+                            <p style="font-size: 20px; color: var(--text-dark); margin-bottom: 8px; font-weight: 700;">Olive&Keto</p>
+                            <div style="margin-bottom: 16px;">
+                                <span style="font-size: 64px; font-weight: 800; color: var(--olive-green); line-height: 1;">$8.99</span>
+                                <span style="font-size: 18px; color: var(--text-gray); display: block; margin-top: 4px;">/month</span>
+                            </div>
+                            <div style="background: white; padding: 16px; border-radius: 12px; margin-top: 20px;">
+                                <p style="font-size: 14px; color: var(--text-dark); margin: 0;">✓ Fresh meal plans<br>✓ Real Mediterranean food<br>✓ Zero processed junk</p>
+                            </div>
                         </div>
-                        <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Meal kit delivery</p>
-                        <div style="position: relative; display: inline-block;">
-                            <p style="font-size: 36px; font-weight: 800; color: #C4856B; margin: 0; line-height: 1;">$120</p>
-                            <div style="position: absolute; top: 50%; left: -10%; right: -10%; height: 3px; background: #C4856B; transform: rotate(-8deg);"></div>
-                        </div>
-                        <p style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">/month</p>
                     </div>
-
-                    <div style="background: white; padding: 28px 20px; border-radius: 16px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); border: 2px solid #C4A57B; position: relative; overflow: hidden;">
-                        <div style="margin-bottom: 12px; display: flex; justify-content: center;">
-                            <div style="width: 64px; height: 64px; border-radius: 12px; background: #8B7355; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; font-size: 32px;">🍔</div>
-                        </div>
-                        <p style="font-size: 15px; color: var(--text-gray); margin-bottom: 12px; font-weight: 600;">Takeout (3x/week)</p>
-                        <div style="position: relative; display: inline-block;">
-                            <p style="font-size: 36px; font-weight: 800; color: #C4856B; margin: 0; line-height: 1;">$180</p>
-                            <div style="position: absolute; top: 50%; left: -10%; right: -10%; height: 3px; background: #C4856B; transform: rotate(-8deg);"></div>
-                        </div>
-                        <p style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">/month</p>
-                    </div>
-                </div>
-
-                <!-- VS Divider -->
-                <div style="text-align: center; margin: 32px 0; position: relative;">
-                    <div style="height: 2px; background: linear-gradient(90deg, transparent 0%, #C4856B 50%, transparent 100%);"></div>
-                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 0 20px;">
-                        <span style="font-size: 20px; font-weight: 700; color: #C4856B;">VS</span>
-                    </div>
-                </div>
-
-                <!-- Olive&Keto Price -->
-                <div style="background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); padding: 32px; border-radius: 20px; text-align: center; box-shadow: 0 8px 24px rgba(95, 122, 97, 0.2); border: 3px solid var(--olive-green);">
-                    <div style="margin-bottom: 12px; display: flex; justify-content: center;">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 56px; height: 56px;"><use xlink:href="#icon-olive"/></svg>
-                    </div>
-                    <p style="font-size: 18px; color: var(--text-dark); margin-bottom: 16px; font-weight: 700;">Olive&Keto</p>
-                    <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-bottom: 12px;">
-                        <span style="font-size: 56px; font-weight: 800; color: var(--olive-green); line-height: 1;">$8.99</span>
-                        <span style="font-size: 20px; color: var(--text-gray);">/month</span>
-                    </div>
-                    <div style="display: inline-flex; align-items: center; gap: 8px; background: white; padding: 12px 24px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        <p style="font-size: 15px; color: var(--text-dark); margin: 0;"><strong>That's less than 1 coffee per week</strong></p>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 20px; height: 20px;"><use xlink:href="#icon-coffee"/></svg>
-                    </div>
-                    <p style="font-size: 13px; color: var(--text-gray); margin-top: 16px; margin-bottom: 0;">+ Fresh meal plans • Real food • Zero processed junk</p>
                 </div>
             </div>
 
