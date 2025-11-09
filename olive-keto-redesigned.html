@@ -155,33 +155,22 @@
             }
         }
 
-        @keyframes underwater-light-1 {
+        @keyframes chalkboard-light {
             0% {
-                opacity: 0.9;
-                transform: scale(1) translateY(0);
+                opacity: 0.7;
+                transform: scale(1) translate(0, 0);
             }
-            50% {
-                opacity: 1;
-                transform: scale(1.2) translateY(-40px);
+            33% {
+                opacity: 0.9;
+                transform: scale(1.15) translate(-30px, -20px);
+            }
+            66% {
+                opacity: 0.75;
+                transform: scale(1.1) translate(20px, 15px);
             }
             100% {
-                opacity: 0.9;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        @keyframes underwater-light-2 {
-            0% {
-                opacity: 0.85;
-                transform: scale(1.1) translateY(-20px);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(0.9) translateY(20px);
-            }
-            100% {
-                opacity: 0.85;
-                transform: scale(1.1) translateY(-20px);
+                opacity: 0.7;
+                transform: scale(1) translate(0, 0);
             }
         }
 
@@ -274,12 +263,14 @@
         /* Hero Section */
         .hero {
             padding: 140px 40px 100px;
-            background: linear-gradient(135deg, #2A3A2C 0%, #5F7A61 40%, #78956A 70%, #4A5D4C 100%);
+            background:
+                linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
+        /* Chalkboard texture */
         .hero::before {
             content: '';
             position: absolute;
@@ -287,15 +278,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                radial-gradient(ellipse at 15% 20%, rgba(144, 176, 125, 0.6) 0%, transparent 40%),
-                radial-gradient(ellipse at 85% 80%, rgba(120, 149, 106, 0.5) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 50%, rgba(95, 122, 97, 0.35) 0%, transparent 50%);
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+                radial-gradient(ellipse at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(255,255,255,0.04) 0%, transparent 50%);
+            opacity: 0.6;
             pointer-events: none;
             z-index: 0;
-            animation: underwater-light-1 8s ease-in-out infinite alternate;
         }
 
+        /* Spotlight animation */
         .hero::after {
             content: '';
             position: absolute;
@@ -304,12 +297,12 @@
             right: 0;
             bottom: 0;
             background:
-                radial-gradient(ellipse at 70% 30%, rgba(144, 176, 125, 0.5) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 70%, rgba(120, 149, 106, 0.4) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 10%, rgba(95, 122, 97, 0.35) 0%, transparent 40%);
+                radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 70% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.06) 0%, transparent 55%);
             pointer-events: none;
             z-index: 0;
-            animation: underwater-light-2 10s ease-in-out infinite alternate-reverse;
+            animation: chalkboard-light 10s ease-in-out infinite alternate;
         }
 
         .hero > * {
