@@ -799,7 +799,7 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 60px;
         }
@@ -1678,12 +1678,12 @@
                 <h1>You're tired by 3pm. You have no idea what to cook tonight. And this happens. Every. Single. Day.</h1>
                 <p class="hero-subtitle">What if Monday morning you woke up knowing exactly what you're cooking this week? And actually felt energized at 3pm? Real Mediterranean foods made this possible for 2,000+ women. No processed keto junk. No plastic cheese. Just simple meal plans that work with your changing body.</p>
                 <div class="hero-ctas">
-                    <a href="#generator" class="btn-primary">Yes, I Want To Feel Energized Again →</a>
+                    <a href="#generator" class="btn-primary">Show Me My Personalized 3-Day Plan →</a>
                     <a href="#how-it-works" class="btn-secondary">See How It Works</a>
                 </div>
                 <div class="hero-trust">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px; flex-shrink: 0;"><use xlink:href="#icon-check"/></svg>
-                    <span>100% Free • No credit card • Start in 60 seconds</span>
+                    <span>100% Free • No credit card • Takes 60 seconds</span>
                 </div>
             </div>
             <div class="hero-visual">
@@ -1905,6 +1905,133 @@
         </div>
     </section>
 
+    <!-- Instant Meal Preview Section -->
+    <section style="padding: 80px 40px; background: linear-gradient(135deg, #FFF8F0 0%, #F0F8FF 100%);">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <div style="display: inline-block; background: var(--olive-green); color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">See What You're Getting - Right Now</div>
+            <h2 style="font-size: 40px; margin-bottom: 16px; color: var(--text-dark); font-weight: 700;">This Is What 2,347 Women Are Eating This Week</h2>
+            <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 48px;">No guessing. No mystery. Here's a preview of actual meals from this week's plan.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 40px;">
+                <!-- Monday Preview -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
+                    <div style="background: linear-gradient(135deg, #8B9D83 0%, #D6E9D7 100%); padding: 16px; color: white;">
+                        <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Monday</div>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Greek Yogurt Bowl</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Full-fat yogurt, berries, walnuts</div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Mediterranean Salad</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Tomatoes, cucumber, feta, olives</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Pan-Seared Salmon</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">With roasted vegetables</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tuesday Preview -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
+                    <div style="background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); padding: 16px; color: white;">
+                        <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Tuesday</div>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Veggie Omelet</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Spinach, tomatoes, feta</div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Chicken & Avocado Bowl</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Grilled chicken, greens, olive oil</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Baked Sea Bass</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Mediterranean herbs & lemon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wednesday Preview -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
+                    <div style="background: linear-gradient(135deg, #C9A690 0%, #F5E6D3 100%); padding: 16px; color: white;">
+                        <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Wednesday</div>
+                    </div>
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Avocado & Eggs</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Poached eggs, herbs</div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Tuna Salad Bowl</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Mixed greens, olives, capers</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Greek Chicken</div>
+                            <div style="font-size: 14px; color: var(--text-gray);">Lemon, oregano, roasted veggies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 24px; max-width: 600px; margin: 0 auto; border: 2px solid var(--olive-green);">
+                <p style="font-size: 16px; color: var(--text-dark); margin-bottom: 16px;"><strong>This is just a 3-day preview.</strong> Full members get 7 days with complete recipes and shopping lists.</p>
+                <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 16px 40px; display: inline-block;">Show Me My Personalized 3-Day Plan →</a>
+                <p style="font-size: 13px; color: var(--text-gray); margin-top: 12px;">Takes 60 seconds • No credit card required</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Story -->
+    <section style="padding: 80px 40px; background: white;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: 320px 1fr; gap: 60px; align-items: start;">
+                <div style="text-align: center;">
+                    <div style="width: 280px; height: 280px; border-radius: 16px; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                        <img src="https://susanatoth.com/wp-content/uploads/susanatoth-vallalkozasfejlesztes-online-vallalkozas-02-2048x2048.jpg" alt="Susana" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <p style="font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Susana</p>
+                    <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 20px;">Mom of 3 • Web Developer<br>Living in Spain</p>
+                    <div style="width: 280px; border-radius: 16px; overflow: hidden; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+                        <img src="http://susanatoth.com/wp-content/uploads/Kepernyofoto-2025-11-08-19.48.59.png" alt="Instagram post" style="width: 100%; height: auto; display: block;">
+                    </div>
+                </div>
+                <div>
+                    <h2 style="font-size: 36px; margin-bottom: 28px; color: var(--text-dark);">I've Been Exactly Where You Are</h2>
+                    <div style="font-size: 18px; line-height: 1.8; color: var(--text-dark);">
+                        <p style="margin-bottom: 20px;">I'm Susana. Mom of three kids. At 46, perimenopause hit me like a truck - literally overnight.</p>
+
+                        <p style="margin-bottom: 20px;">Before I turned 40, I had successfully lost over 40kg with keto after my pregnancies. It worked beautifully. Until it didn't.</p>
+
+                        <p style="margin-bottom: 20px;">When perimenopause started, the same keto approach that helped me before just... stopped working. The sleep issues started. The hot flashes. The exhaustion. I felt like I was living in someone else's body.</p>
+
+                        <p style="margin-bottom: 20px;"><strong>Then something changed:</strong> Four years ago, I moved to Spain. And I was surrounded by what they call "the world's healthiest diet" - real Mediterranean food. Olive oil. Fresh fish. Vegetables from the market. Simple, whole ingredients.</p>
+
+                        <p style="margin-bottom: 20px;">I started combining my keto knowledge with these Mediterranean foods. Not processed "keto products" from packages - just real food the way Spanish grandmothers have been eating for generations.</p>
+
+                        <p style="margin-bottom: 20px;">The sleep issues got better. The hot flashes eased. I started feeling like myself again.</p>
+
+                        <p style="margin-bottom: 20px;">As a web developer, I thought: if this worked for me, maybe it can help other women going through the same thing. So I built this website.</p>
+
+                        <p style="margin-bottom: 0; padding: 28px; background: var(--soft-sage); border-radius: 12px; border-left: 4px solid var(--accent-sage);"><em style="font-size: 17px;">"I'm not a nutritionist or health expert. I'm a web developer and a mom who found something that worked. This is just meal planning inspiration - what helped me, shared with you."</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Trust Section -->
     <section class="trust-section bg-pattern-spots">
         <div class="trust-content">
@@ -1979,44 +2106,6 @@
                     </div>
                     <h3>No Processed Keto Products</h3>
                     <p>Zero artificial sweeteners, fake cheese, or protein bars. Just real food your grandmother would recognize</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder Story -->
-    <section style="padding: 80px 40px; background: white;">
-        <div style="max-width: 1100px; margin: 0 auto;">
-            <div style="display: grid; grid-template-columns: 320px 1fr; gap: 60px; align-items: start;">
-                <div style="text-align: center;">
-                    <div style="width: 280px; height: 280px; border-radius: 16px; overflow: hidden; margin: 0 auto 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-                        <img src="https://susanatoth.com/wp-content/uploads/susanatoth-vallalkozasfejlesztes-online-vallalkozas-02-2048x2048.jpg" alt="Susana" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <p style="font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Susana</p>
-                    <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 20px;">Mom of 3 • Web Developer<br>Living in Spain</p>
-                    <div style="width: 280px; border-radius: 16px; overflow: hidden; margin: 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
-                        <img src="http://susanatoth.com/wp-content/uploads/Kepernyofoto-2025-11-08-19.48.59.png" alt="Instagram post" style="width: 100%; height: auto; display: block;">
-                    </div>
-                </div>
-                <div>
-                    <h2 style="font-size: 36px; margin-bottom: 28px; color: var(--text-dark);">I've Been Exactly Where You Are</h2>
-                    <div style="font-size: 18px; line-height: 1.8; color: var(--text-dark);">
-                        <p style="margin-bottom: 20px;">I'm Susana. Mom of three kids. At 46, perimenopause hit me like a truck - literally overnight.</p>
-
-                        <p style="margin-bottom: 20px;">Before I turned 40, I had successfully lost over 40kg with keto after my pregnancies. It worked beautifully. Until it didn't.</p>
-
-                        <p style="margin-bottom: 20px;">When perimenopause started, the same keto approach that helped me before just... stopped working. The sleep issues started. The hot flashes. The exhaustion. I felt like I was living in someone else's body.</p>
-
-                        <p style="margin-bottom: 20px;"><strong>Then something changed:</strong> Four years ago, I moved to Spain. And I was surrounded by what they call "the world's healthiest diet" - real Mediterranean food. Olive oil. Fresh fish. Vegetables from the market. Simple, whole ingredients.</p>
-
-                        <p style="margin-bottom: 20px;">I started combining my keto knowledge with these Mediterranean foods. Not processed "keto products" from packages - just real food the way Spanish grandmothers have been eating for generations.</p>
-
-                        <p style="margin-bottom: 20px;">The sleep issues got better. The hot flashes eased. I started feeling like myself again.</p>
-
-                        <p style="margin-bottom: 20px;">As a web developer, I thought: if this worked for me, maybe it can help other women going through the same thing. So I built this website.</p>
-
-                        <p style="margin-bottom: 0; padding: 28px; background: var(--soft-sage); border-radius: 12px; border-left: 4px solid var(--accent-sage);"><em style="font-size: 17px;">"I'm not a nutritionist or health expert. I'm a web developer and a mom who found something that worked. This is just meal planning inspiration - what helped me, shared with you."</em></p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -2562,6 +2651,41 @@
                     <p class="pricing-description">Everything you need</p>
                     <div class="pricing-price">$8.99</div>
                     <div class="pricing-period">per month</div>
+
+                    <!-- Value Stack -->
+                    <div style="background: rgba(139, 157, 131, 0.1); border-radius: 12px; padding: 20px; margin: 20px 0; border: 2px solid var(--olive-green);">
+                        <div style="font-size: 14px; color: var(--text-dark); line-height: 1.8; text-align: left;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>✓ 21 new recipes every week</span>
+                                <span style="color: var(--text-gray); text-decoration: line-through;">$47</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>✓ Organized shopping lists</span>
+                                <span style="color: var(--text-gray); text-decoration: line-through;">$12</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>✓ Printable meal prep guides</span>
+                                <span style="color: var(--text-gray); text-decoration: line-through;">$29</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 2px dashed var(--olive-green);">
+                                <span>✓ Seasonal variations library</span>
+                                <span style="color: var(--text-gray); text-decoration: line-through;">$35</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 15px; margin-bottom: 8px;">
+                                <span>Total Value:</span>
+                                <span style="color: var(--text-gray); text-decoration: line-through;">$123/mo</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 18px; color: var(--olive-green);">
+                                <span>You Pay:</span>
+                                <span>$8.99/mo</span>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(139, 157, 131, 0.3);">
+                            <p style="font-size: 13px; color: var(--text-gray); margin: 0;">That's <strong style="color: var(--olive-green);">$0.30/meal</strong> planned</p>
+                            <p style="font-size: 12px; color: var(--text-gray); margin: 4px 0 0;">Less than a coffee. For an entire week of meals.</p>
+                        </div>
+                    </div>
+
                     <ul class="pricing-features">
                         <li>Fresh meal plans every week</li>
                         <li>Complete step-by-step recipes</li>
@@ -2574,6 +2698,40 @@
                         <li>Cancel anytime, no hassle</li>
                     </ul>
                     <a href="#generator" class="btn-primary" style="width: 100%;">Start Free, Upgrade Anytime →</a>
+                </div>
+
+                <!-- Annual Plan -->
+                <div class="pricing-card" style="position: relative; border: 3px solid var(--olive-green);">
+                    <div class="pricing-badge" style="background: linear-gradient(135deg, #C9A690 0%, #8B9D83 100%);">BEST VALUE - Save 45%</div>
+                    <h3 class="pricing-name">Annual Plan</h3>
+                    <p class="pricing-description">12 months of Mediterranean meal planning</p>
+                    <div class="pricing-price">$49</div>
+                    <div class="pricing-period">per year</div>
+
+                    <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F5E6D3 100%); border-radius: 12px; padding: 16px; margin: 20px 0;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 32px; font-weight: 800; color: var(--olive-green); line-height: 1;">$4.08</div>
+                            <div style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">per month</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--accent-sage); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(139, 157, 131, 0.3);">Save $59/year vs monthly plan</div>
+                        </div>
+                    </div>
+
+                    <ul class="pricing-features">
+                        <li><strong>Everything in Full Access</strong></li>
+                        <li>52 weeks of fresh meal plans</li>
+                        <li>Complete recipe library access</li>
+                        <li>Printable PDFs & shopping lists</li>
+                        <li>Seasonal recipe variations</li>
+                        <li>Priority email support</li>
+                        <li>Early access to new features</li>
+                        <li>One-time payment, full year coverage</li>
+                        <li>30-day money-back guarantee</li>
+                    </ul>
+                    <a href="#generator" class="btn-primary" style="width: 100%; background: linear-gradient(135deg, #8B9D83 0%, #6B8CAE 100%);">Get Annual Plan - Save $59 →</a>
+
+                    <div style="margin-top: 16px; padding: 12px; background: rgba(139, 157, 131, 0.1); border-radius: 8px; text-align: center;">
+                        <p style="font-size: 12px; color: var(--text-gray); margin: 0;">🔥 <strong>73% of members</strong> choose yearly after first month</p>
+                    </div>
                 </div>
             </div>
 
@@ -2621,6 +2779,30 @@
                 <div style="padding: 20px; background: white; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                     <p style="font-size: 14px; line-height: 1.6; color: var(--text-dark); margin-bottom: 12px; font-style: italic;">"I have my energy back and my pants fit better!"</p>
                     <p style="font-size: 13px; color: var(--text-gray); margin: 0;">— Lisa R., 44</p>
+                </div>
+
+                <!-- Fear Reversal Checklist -->
+                <div style="padding: 24px; background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); border-radius: 12px; margin-bottom: 24px; border: 2px solid var(--olive-green);">
+                    <h5 style="font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; text-align: center;">Why This Is Actually Free:</h5>
+                    <div style="font-size: 13px; line-height: 1.8; color: var(--text-dark);">
+                        <div style="display: flex; align-items: start; gap: 8px; margin-bottom: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"><use xlink:href="#icon-check"/></svg>
+                            <span><strong>No credit card asked</strong> (ever, for free plan)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 8px; margin-bottom: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"><use xlink:href="#icon-check"/></svg>
+                            <span><strong>No spam</strong> (we send 1 email/week max)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 8px; margin-bottom: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"><use xlink:href="#icon-check"/></svg>
+                            <span><strong>No selling your info</strong> (we're not that kind of business)</span>
+                        </div>
+                        <div style="display: flex; align-items: start; gap: 8px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;"><use xlink:href="#icon-check"/></svg>
+                            <span><strong>Just meal ideas</strong> (upgrade only if you want recipes)</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 11px; color: var(--text-gray); margin: 16px 0 0; text-align: center; font-style: italic;">Seriously. This is just a meal planner, not a mortgage application.</p>
                 </div>
 
                 <div class="rating-card">
@@ -2723,6 +2905,32 @@
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 20px; height: 20px;"><use xlink:href="#icon-sparkle"/></svg>
                         Generate My Free 3-Day Plan
                     </button>
+
+                    <!-- What Happens Next Transparency -->
+                    <div style="margin-top: 32px; padding: 24px; background: rgba(139, 157, 131, 0.08); border-radius: 12px; border-left: 4px solid var(--olive-green);">
+                        <h5 style="font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px;">What happens after you click "Generate":</h5>
+                        <div style="font-size: 14px; line-height: 1.8; color: var(--text-dark);">
+                            <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--olive-green); color: white; border-radius: 50%; font-weight: 700; font-size: 14px; flex-shrink: 0;">1</span>
+                                <div>
+                                    <strong>You'll see your 3-day plan instantly</strong> (no waiting)
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--olive-green); color: white; border-radius: 50%; font-weight: 700; font-size: 14px; flex-shrink: 0;">2</span>
+                                <div>
+                                    <strong>We'll email you a PDF version</strong> (check spam folder!)
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: start; gap: 12px;">
+                                <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--olive-green); color: white; border-radius: 50%; font-weight: 700; font-size: 14px; flex-shrink: 0;">3</span>
+                                <div>
+                                    <strong>Monday we'll send weekly meal inspiration</strong> (unsubscribe anytime)
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-gray); margin: 16px 0 0; padding-top: 16px; border-top: 1px solid rgba(139, 157, 131, 0.2); text-align: center;">That's it. No sales calls. No pressure.</p>
+                    </div>
                 </form>
 
                 <!-- Results Container -->
