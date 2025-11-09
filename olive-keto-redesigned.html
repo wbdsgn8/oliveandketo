@@ -15,35 +15,35 @@
         }
 
         :root {
-            /* Parent Guidebook inspired palette */
-            --cream: #FFF9F0;
-            --warm-white: #FFFCF7;
-            --soft-peach: #FFF4E6;
+            /* 2026 Minimalist Palette - Clean & Professional */
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
 
-            /* Primary CTA colors - for buttons and main actions */
-            --primary-green: #5F7A61;
-            --primary-green-dark: #4A5D4C;
-            --olive-green: #5F7A61; /* Main CTA color */
+            /* Primary - Olive (Active/Accent) */
+            --olive-green: #5F7A61;
+            --olive-dark: #4A5D4C;
+            --olive-light: #8B9D83;
 
-            /* Accent colors - for decorative elements, badges, stats */
-            --accent-blue: #6B8CAE; /* Calm blue for stats and indicators */
-            --accent-sage: #9BAA96; /* Softer green for badges and labels */
-            --accent-warm: #C4A57B; /* Warm tone for highlights */
+            /* Secondary - Cold Beige/Coffee Tones */
+            --beige: #E8E3DD;
+            --beige-light: #F5F3F0;
+            --coffee: #6B625A;
+            --coffee-dark: #4A4541;
 
-            --soft-pink: #FFD6E0;
-            --soft-blue: #D6E9FF;
-            --soft-sage: #E8F0E3;
+            /* Text */
             --text-dark: #2D2D2D;
-            --text-gray: #5A5A5A;
-            --border-light: #F0E8DB;
-            --placeholder-bg: #E8E8E8;
-            --placeholder-stroke: #999;
+            --text-gray: #6B625A;
+            --text-light: #9B918A;
+
+            /* Borders */
+            --border: #E8E3DD;
+            --border-light: #F0EBE6;
         }
 
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text-dark);
-            background: var(--cream);
+            background: var(--white);
             line-height: 1.6;
             font-size: 16px;
         }
@@ -73,7 +73,7 @@
             vertical-align: middle;
         }
 
-        /* Elegant background patterns */
+        /* Subtle background pattern */
         .bg-pattern-leaves {
             position: relative;
             overflow: hidden;
@@ -92,9 +92,7 @@
             right: 0;
             bottom: 0;
             background-image:
-                radial-gradient(circle at 20% 30%, rgba(139, 157, 131, 0.20) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(214, 233, 255, 0.25) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(232, 240, 227, 0.30) 0%, transparent 50%);
+                radial-gradient(circle at 20% 30%, rgba(95, 122, 97, 0.03) 0%, transparent 50%);
             pointer-events: none;
             z-index: -2;
         }
@@ -201,7 +199,7 @@
 
         /* Header */
         header {
-            background: var(--warm-white);
+            background: var(--white);
             position: fixed;
             top: 0;
             width: 100%;
@@ -241,7 +239,7 @@
         /* Hero Section */
         .hero {
             padding: 140px 40px 100px;
-            background: var(--warm-white);
+            background: var(--white);
             text-align: center;
         }
 
@@ -260,7 +258,7 @@
 
         .hero-badge {
             display: inline-block;
-            background: linear-gradient(135deg, var(--accent-sage) 0%, var(--accent-blue) 100%);
+            background: var(--olive-green);
             color: white;
             padding: 12px 28px;
             border-radius: 24px;
@@ -269,7 +267,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             margin-bottom: 28px;
-            box-shadow: 0 4px 12px rgba(95, 122, 97, 0.25);
+            box-shadow: 0 2px 8px rgba(95, 122, 97, 0.15);
         }
 
         .hero h1 {
@@ -296,7 +294,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px 48px;
-            background: var(--primary-green);
+            background: var(--olive-green);
             color: white;
             text-decoration: none;
             font-size: 18px;
@@ -305,13 +303,13 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 16px rgba(95, 122, 97, 0.3);
+            box-shadow: 0 2px 8px rgba(95, 122, 97, 0.15);
         }
 
         .btn-primary:hover {
-            background: var(--primary-green-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(95, 122, 97, 0.4);
+            background: var(--olive-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .btn-secondary {
@@ -319,12 +317,12 @@
             align-items: center;
             justify-content: center;
             padding: 18px 40px;
-            background: white;
+            background: var(--white);
             color: var(--text-dark);
             text-decoration: none;
             font-size: 17px;
             font-weight: 600;
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border);
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -332,6 +330,7 @@
 
         .btn-secondary:hover {
             border-color: var(--olive-green);
+            color: var(--olive-green);
         }
 
         .hero-trust {
@@ -385,7 +384,7 @@
 
         .hero-meal-label {
             font-size: 13px;
-            color: var(--accent-sage);
+            color: var(--olive-light);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -412,7 +411,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 16px;
             padding: 20px;
-            background: var(--soft-sage);
+            background: var(--beige-light);
             border-radius: 12px;
         }
 
@@ -423,7 +422,7 @@
         .macro-value {
             font-size: 24px;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--coffee);
             margin-bottom: 4px;
         }
 
@@ -454,7 +453,7 @@
         }
 
         .carousel-dot.active {
-            background: var(--accent-blue);
+            background: var(--coffee);
             width: 32px;
             border-radius: 6px;
         }
@@ -471,13 +470,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
             z-index: 10;
         }
 
         .carousel-arrow:hover {
-            background: var(--accent-sage);
+            background: var(--olive-light);
             color: white;
             transform: scale(1.1);
         }
@@ -528,7 +527,7 @@
         /* Research-Backed Section */
         .trust-section {
             padding: 80px 40px;
-            background: var(--cream);
+            background: var(--white);
             text-align: center;
         }
 
@@ -583,7 +582,7 @@
         /* Features Section */
         .features {
             padding: 80px 40px;
-            background: var(--warm-white);
+            background: var(--white);
         }
 
         .features-content {
@@ -671,7 +670,7 @@
         /* How It Works */
         .how-it-works {
             padding: 80px 40px;
-            background: var(--cream);
+            background: var(--white);
         }
 
         .how-content {
@@ -687,7 +686,7 @@
         }
 
         .step-card {
-            background: var(--warm-white);
+            background: var(--white);
             padding: 40px;
             border-radius: 16px;
             text-align: center;
@@ -722,7 +721,7 @@
         /* Social Proof */
         .social-proof {
             padding: 80px 40px;
-            background: var(--warm-white);
+            background: var(--white);
         }
 
         .proof-content {
@@ -748,7 +747,7 @@
         .stat-number {
             font-size: 48px;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--coffee);
             margin-bottom: 8px;
         }
 
@@ -759,7 +758,7 @@
 
         /* Testimonial */
         .testimonial {
-            background: var(--soft-sage);
+            background: var(--beige-light);
             padding: 60px;
             border-radius: 24px;
             max-width: 900px;
@@ -789,7 +788,7 @@
         /* Pricing Section */
         .pricing {
             padding: 80px 40px;
-            background: var(--cream);
+            background: var(--white);
         }
 
         .pricing-content {
@@ -808,7 +807,7 @@
             background: white;
             padding: 48px 40px;
             border-radius: 16px;
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -887,7 +886,7 @@
         /* Generator Section */
         .generator {
             padding: 80px 40px;
-            background: var(--warm-white);
+            background: var(--white);
         }
 
         .generator-content {
@@ -927,7 +926,7 @@
             align-items: center;
             gap: 12px;
             padding: 12px;
-            background: var(--soft-sage);
+            background: var(--beige-light);
             border-radius: 8px;
             margin-bottom: 12px;
             animation: slideIn 0.5s ease;
@@ -948,7 +947,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-sage) 100%);
+            background: var(--olive-green);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1002,7 +1001,7 @@
             height: 40px;
             border-radius: 50%;
             background: white;
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1013,14 +1012,14 @@
         }
 
         .form-step.active .step-circle {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
+            background: var(--coffee);
+            border-color: var(--coffee);
             color: white;
         }
 
         .form-step.completed .step-circle {
-            background: var(--accent-sage);
-            border-color: var(--accent-sage);
+            background: var(--olive-light);
+            border-color: var(--olive-light);
             color: white;
         }
 
@@ -1035,7 +1034,7 @@
         }
 
         .form-step.active .step-label {
-            color: var(--accent-blue);
+            color: var(--coffee);
             font-weight: 600;
         }
 
@@ -1069,7 +1068,7 @@
             padding: 16px 32px;
             background: white;
             color: var(--text-dark);
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
@@ -1112,7 +1111,7 @@
         .form-input, .form-select {
             width: 100%;
             padding: 16px;
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             border-radius: 8px;
             font-size: 16px;
             font-family: 'DM Sans', sans-serif;
@@ -1121,7 +1120,7 @@
 
         .form-input:focus, .form-select:focus {
             outline: none;
-            border-color: var(--accent-blue);
+            border-color: var(--coffee);
         }
 
         .checkbox-group {
@@ -1137,14 +1136,14 @@
             gap: 8px;
             cursor: pointer;
             padding: 12px;
-            border: 2px solid var(--border-light);
+            border: 1px solid var(--border-light);
             border-radius: 8px;
             transition: all 0.3s;
         }
 
         .checkbox-label:hover {
-            border-color: var(--accent-sage);
-            background: var(--soft-sage);
+            border-color: var(--olive-light);
+            background: var(--beige-light);
         }
 
         .checkbox-label input[type="checkbox"] {
@@ -1191,13 +1190,13 @@
         }
 
         details[open] {
-            background: var(--soft-sage);
+            background: var(--beige-light);
         }
 
         /* CTA Section */
         .final-cta {
             padding: 100px 40px;
-            background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-peach) 100%);
+            background: var(--white);
             text-align: center;
         }
 
@@ -1273,7 +1272,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
+            border: 1px solid rgba(255,255,255,.3);
             border-radius: 50%;
             border-top-color: white;
             animation: spin 1s ease-in-out infinite;
@@ -1311,7 +1310,7 @@
         .stats-highlight-card {
             margin-top: 24px;
             padding: 20px;
-            background: var(--soft-sage);
+            background: var(--beige-light);
             border-radius: 12px;
             text-align: center;
         }
@@ -1319,7 +1318,7 @@
         .stats-highlight-number {
             font-size: 32px;
             font-weight: 700;
-            color: var(--accent-blue);
+            color: var(--coffee);
             margin-bottom: 4px;
         }
 
@@ -1331,7 +1330,7 @@
         .rating-card {
             margin-top: 20px;
             padding: 16px;
-            background: var(--soft-peach);
+            background: var(--beige-light);
             border-radius: 12px;
         }
 
@@ -1404,7 +1403,7 @@
         .progress-label {
             font-size: 14px;
             font-weight: 600;
-            color: var(--accent-blue);
+            color: var(--coffee);
         }
 
         .progress-text {
@@ -1420,7 +1419,7 @@
         }
 
         .progress-bar {
-            background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-sage) 100%);
+            background: var(--olive-green);
             height: 100%;
             width: 0%;
             transition: width 0.3s ease;
@@ -1886,19 +1885,19 @@
             <p style="font-size: 14px; color: var(--text-gray); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Trusted by Real Women</p>
             <div style="display: flex; justify-content: center; align-items: center; gap: 60px; flex-wrap: wrap;">
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">2,000+</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--coffee); margin-bottom: 4px;">2,000+</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Active Members</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--coffee); margin-bottom: 4px;">⭐⭐⭐⭐⭐</div>
                     <div style="font-size: 14px; color: var(--text-gray);">4.8/5.0 Rating</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">50,000+</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--coffee); margin-bottom: 4px;">50,000+</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Meals Planned</div>
                 </div>
                 <div style="text-align: center;">
-                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-blue); margin-bottom: 4px;">95%</div>
+                    <div style="font-size: 36px; font-weight: 700; color: var(--coffee); margin-bottom: 4px;">95%</div>
                     <div style="font-size: 14px; color: var(--text-gray);">Would Recommend</div>
                 </div>
             </div>
@@ -1906,7 +1905,7 @@
     </section>
 
     <!-- Instant Meal Preview Section -->
-    <section style="padding: 80px 40px; background: linear-gradient(135deg, #FFF8F0 0%, #F0F8FF 100%);">
+    <section style="padding: 80px 40px; background: var(--beige-light);">
         <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
             <div style="display: inline-block; background: var(--olive-green); color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">See What You're Getting - Right Now</div>
             <h2 style="font-size: 40px; margin-bottom: 16px; color: var(--text-dark); font-weight: 700;">This Is What 2,347 Women Are Eating This Week</h2>
@@ -1914,13 +1913,13 @@
 
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 40px;">
                 <!-- Monday Preview -->
-                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
-                    <div style="background: linear-gradient(135deg, #8B9D83 0%, #D6E9D7 100%); padding: 16px; color: white;">
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 1px solid var(--border-light); text-align: left;">
+                    <div style="background: var(--olive-green); padding: 16px; color: white;">
                         <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Monday</div>
                     </div>
                     <div style="padding: 24px;">
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-size: 12px; color: var(--olive-light); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Greek Yogurt Bowl</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Full-fat yogurt, berries, walnuts</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -1931,7 +1930,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-size: 12px; color: var(--olive-light); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Mediterranean Salad</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Tomatoes, cucumber, feta, olives</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -1942,7 +1941,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-sage); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-size: 12px; color: var(--olive-light); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Pan-Seared Salmon</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">With roasted vegetables</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -1953,11 +1952,11 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding: 12px; background: rgba(255, 248, 240, 0.6); border-radius: 8px; border: 1px dashed #C9A690;">
-                            <div style="font-size: 11px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
+                            <div style="font-size: 11px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
                             <div style="font-weight: 600; color: var(--text-dark); font-size: 13px; margin-bottom: 2px;">Dark Chocolate & Berries</div>
                             <div style="font-size: 10px; color: var(--text-gray);">135 cal • 7g carbs ✨</div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 16px; border-radius: 12px; margin-top: 20px;">
+                        <div style="background: var(--beige-light); padding: 16px; border-radius: 12px; margin-top: 20px;">
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; text-align: center;">Daily Totals</div>
                             <div style="display: flex; justify-content: space-around; font-size: 12px; color: var(--text-dark);">
                                 <div style="text-align: center;">
@@ -1982,13 +1981,13 @@
                 </div>
 
                 <!-- Tuesday Preview -->
-                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
-                    <div style="background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); padding: 16px; color: white;">
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 1px solid var(--border-light); text-align: left;">
+                    <div style="background: var(--coffee); padding: 16px; color: white;">
                         <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Tuesday</div>
                     </div>
                     <div style="padding: 24px;">
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Veggie Omelet</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Spinach, tomatoes, feta</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -1999,7 +1998,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Chicken & Avocado Bowl</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Grilled chicken, greens, olive oil</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -2010,7 +2009,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Baked Sea Bass</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Mediterranean herbs & lemon</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -2021,27 +2020,27 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding: 12px; background: rgba(255, 248, 240, 0.6); border-radius: 8px; border: 1px dashed #C9A690;">
-                            <div style="font-size: 11px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
+                            <div style="font-size: 11px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
                             <div style="font-weight: 600; color: var(--text-dark); font-size: 13px; margin-bottom: 2px;">Greek Yogurt with Cinnamon</div>
                             <div style="font-size: 10px; color: var(--text-gray);">180 cal • 6g carbs ✨</div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 16px; border-radius: 12px; margin-top: 20px;">
+                        <div style="background: var(--beige-light); padding: 16px; border-radius: 12px; margin-top: 20px;">
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; text-align: center;">Daily Totals</div>
                             <div style="display: flex; justify-content: space-around; font-size: 12px; color: var(--text-dark);">
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-blue);">1,587</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">1,587</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Calories</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-blue);">121g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">121g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Protein</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-blue);">111g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">111g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Fat</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-blue);">21g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">21g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Net Carbs</div>
                                 </div>
                             </div>
@@ -2050,13 +2049,13 @@
                 </div>
 
                 <!-- Wednesday Preview -->
-                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: left;">
-                    <div style="background: linear-gradient(135deg, #C9A690 0%, #F5E6D3 100%); padding: 16px; color: white;">
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.06); text-align: left;">
+                    <div style="background: var(--olive-light); padding: 16px; color: white;">
                         <div style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Wednesday</div>
                     </div>
                     <div style="padding: 24px;">
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Breakfast</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Avocado & Eggs</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Poached eggs, herbs</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -2067,7 +2066,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Lunch</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Tuna Salad Bowl</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Mixed greens, olives, capers</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -2078,7 +2077,7 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #f0f0f0;">
-                            <div style="font-size: 12px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
+                            <div style="font-size: 12px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 8px;">Dinner</div>
                             <div style="font-weight: 600; color: var(--text-dark); margin-bottom: 4px;">Greek Chicken</div>
                             <div style="font-size: 13px; color: var(--text-gray); margin-bottom: 8px;">Lemon, oregano, roasted veggies</div>
                             <div style="display: flex; gap: 12px; font-size: 11px; color: var(--text-gray);">
@@ -2089,27 +2088,27 @@
                             </div>
                         </div>
                         <div style="margin-bottom: 20px; padding: 12px; background: rgba(255, 248, 240, 0.6); border-radius: 8px; border: 1px dashed #C9A690;">
-                            <div style="font-size: 11px; color: var(--accent-brown); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
+                            <div style="font-size: 11px; color: var(--coffee); font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">Sweet Treat</div>
                             <div style="font-weight: 600; color: var(--text-dark); font-size: 13px; margin-bottom: 2px;">Keto Chocolate Mousse</div>
                             <div style="font-size: 10px; color: var(--text-gray);">210 cal • 3g carbs ✨</div>
                         </div>
-                        <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 16px; border-radius: 12px; margin-top: 20px;">
+                        <div style="background: var(--beige-light); padding: 16px; border-radius: 12px; margin-top: 20px;">
                             <div style="font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; text-align: center;">Daily Totals</div>
                             <div style="display: flex; justify-content: space-around; font-size: 12px; color: var(--text-dark);">
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-brown);">1,512</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">1,512</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Calories</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-brown);">73g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">73g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Protein</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-brown);">125g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">125g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Fat</div>
                                 </div>
                                 <div style="text-align: center;">
-                                    <div style="font-weight: 700; font-size: 16px; color: var(--accent-brown);">16g</div>
+                                    <div style="font-weight: 700; font-size: 16px; color: var(--coffee);">16g</div>
                                     <div style="font-size: 10px; color: var(--text-gray);">Net Carbs</div>
                                 </div>
                             </div>
@@ -2118,7 +2117,7 @@
                 </div>
             </div>
 
-            <div style="background: white; border-radius: 12px; padding: 24px; max-width: 600px; margin: 0 auto; border: 2px solid var(--olive-green);">
+            <div style="background: white; border-radius: 12px; padding: 24px; max-width: 600px; margin: 0 auto; border: 1px solid var(--olive-green);">
                 <p style="font-size: 16px; color: var(--text-dark); margin-bottom: 16px;"><strong>This is just a 3-day preview.</strong> Full members get 7 days with complete recipes and shopping lists.</p>
                 <a href="#generator" class="btn-primary" style="font-size: 18px; padding: 16px 40px; display: inline-block;">Show Me My Personalized 3-Day Plan →</a>
                 <p style="font-size: 13px; color: var(--text-gray); margin-top: 12px;">Takes 60 seconds • No credit card required</p>
@@ -2157,7 +2156,7 @@
 
                         <p style="margin-bottom: 20px;">As a web developer, I thought: if this worked for me, maybe it can help other women going through the same thing. So I built this website.</p>
 
-                        <p style="margin-bottom: 0; padding: 28px; background: var(--soft-sage); border-radius: 12px; border-left: 4px solid var(--accent-sage);"><em style="font-size: 17px;">"I'm not a nutritionist or health expert. I'm a web developer and a mom who found something that worked. This is just meal planning inspiration - what helped me, shared with you."</em></p>
+                        <p style="margin-bottom: 0; padding: 28px; background: var(--beige-light); border-radius: 12px; border-left: 4px solid var(--olive-light);"><em style="font-size: 17px;">"I'm not a nutritionist or health expert. I'm a web developer and a mom who found something that worked. This is just meal planning inspiration - what helped me, shared with you."</em></p>
                     </div>
                 </div>
             </div>
@@ -2244,7 +2243,7 @@
     </section>
 
     <!-- Movement & Walking Section -->
-    <section style="padding: 80px 40px; background: linear-gradient(135deg, #E8F4E5 0%, #D6E9D7 100%);">
+    <section style="padding: 80px 40px; background: var(--beige-light);">
         <div style="max-width: 1100px; margin: 0 auto;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
                 <div>
@@ -2277,10 +2276,10 @@
     </section>
 
     <!-- Scientific Methodology Section -->
-    <section style="padding: 80px 40px; background: linear-gradient(135deg, #F0F8FF 0%, #FFF8F0 100%);">
+    <section style="padding: 80px 40px; background: var(--white);">
         <div style="max-width: 1000px; margin: 0 auto;">
             <div style="text-align: center; margin-bottom: 48px;">
-                <div style="display: inline-block; background: var(--accent-sage); color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">Science-Based Nutrition</div>
+                <div style="display: inline-block; background: var(--olive-light); color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">Science-Based Nutrition</div>
                 <h2 style="font-size: 38px; margin-bottom: 24px; color: var(--text-dark); font-weight: 700; line-height: 1.2;">Why Our Approach Is Different</h2>
                 <p style="font-size: 18px; color: var(--text-gray); max-width: 700px; margin: 0 auto; line-height: 1.7;">We don't believe in 1,000-calorie crash diets or extreme restrictions. Our meal plans are based on validated scientific research for women 40+.</p>
             </div>
@@ -2292,7 +2291,7 @@
                     <p style="font-size: 15px; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px;">
                         We calculate your personalized calorie needs using the <strong>Mifflin-St Jeor equation</strong> — the most accurate formula for women over 40, validated by the National Institute on Aging.
                     </p>
-                    <div style="background: var(--soft-blue); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
+                    <div style="background: var(--beige-light); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
                         <strong>Not generic diets.</strong> Your age, height, weight, and activity level determine YOUR healthy calorie target — never below 1,400 calories.
                     </div>
                 </div>
@@ -2303,7 +2302,7 @@
                     <p style="font-size: 15px; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px;">
                         Research from the <strong>Women's Health Initiative</strong> shows that sustainable weight loss comes from moderate calorie reduction (15% max) combined with gentle, consistent movement.
                     </p>
-                    <div style="background: var(--soft-sage); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
+                    <div style="background: var(--beige-light); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
                         <strong>We feed you properly.</strong> Then recommend a 30-minute walk to create a healthy deficit — not starvation.
                     </div>
                 </div>
@@ -2314,7 +2313,7 @@
                     <p style="font-size: 15px; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px;">
                         Studies show women over 40 need <strong>25% of calories from protein</strong> to preserve muscle mass during perimenopause and menopause. Our Mediterranean approach delivers this naturally.
                     </p>
-                    <div style="background: var(--soft-peach); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
+                    <div style="background: var(--beige-light); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
                         <strong>Real food sources.</strong> Wild fish, grass-fed meat, Greek yogurt — not protein powders.
                     </div>
                 </div>
@@ -2325,13 +2324,13 @@
                     <p style="font-size: 15px; line-height: 1.7; color: var(--text-dark); margin-bottom: 16px;">
                         We follow a <strong>moderate ketogenic approach</strong> (50-75g net carbs) validated for long-term sustainability, not extreme restriction that leads to yo-yo dieting.
                     </p>
-                    <div style="background: var(--soft-sage); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
+                    <div style="background: var(--beige-light); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-dark); line-height: 1.6;">
                         <strong>You can eat vegetables.</strong> Plenty of non-starchy veggies, berries, and even dark chocolate.
                     </div>
                 </div>
             </div>
 
-            <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 32px; border-radius: 16px; border: 2px solid var(--accent-sage);">
+            <div style="background: var(--beige-light); padding: 32px; border-radius: 16px; border: 1px solid var(--olive-light);">
                 <h4 style="font-size: 20px; margin-bottom: 20px; text-align: center; color: var(--text-dark);">📚 Scientific Sources & References</h4>
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; font-size: 14px; line-height: 1.7; color: var(--text-dark);">
                     <div>
@@ -2354,7 +2353,7 @@
                 <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(139, 157, 131, 0.2); text-align: center;">
                     <p style="font-size: 13px; color: var(--text-gray); margin: 0;">
                         📖 Full methodology and research citations available at
-                        <a href="https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet" target="_blank" style="color: var(--accent-sage); text-decoration: underline; font-weight: 600;">National Institute on Aging</a>
+                        <a href="https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet" target="_blank" style="color: var(--olive-light); text-decoration: underline; font-weight: 600;">National Institute on Aging</a>
                     </p>
                 </div>
             </div>
@@ -2362,7 +2361,7 @@
     </section>
 
     <!-- CTA Section 1 -->
-    <section style="padding: 60px 40px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-peach) 100%); text-align: center;">
+    <section style="padding: 60px 40px; background: var(--white); text-align: center;">
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Ready for real food?</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Get your personalized Mediterranean plan - no processed products, just whole foods</p>
@@ -2495,7 +2494,7 @@
     </section>
 
     <!-- CTA Section 4 -->
-    <section style="padding: 60px 40px; background: var(--cream); text-align: center;">
+    <section style="padding: 60px 40px; background: var(--white); text-align: center;">
         <div style="max-width: 700px; margin: 0 auto;">
             <h2 style="font-size: 36px; margin-bottom: 16px; color: var(--text-dark);">Everything you need to succeed</h2>
             <p style="font-size: 18px; color: var(--text-gray); margin-bottom: 32px;">Start eating better today with a personalized plan designed for you</p>
@@ -2541,7 +2540,7 @@
     </section>
 
     <!-- Quick Wins Timeline -->
-    <section style="padding: 80px 40px; background: linear-gradient(135deg, var(--soft-peach) 0%, var(--soft-blue) 100%);">
+    <section style="padding: 80px 40px; background: var(--beige-light);">
         <div style="max-width: 1000px; margin: 0 auto;">
             <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <h2 style="font-size: 40px; margin-bottom: 16px;">What to Expect (The Honest Timeline)</h2>
@@ -2550,34 +2549,34 @@
 
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;">
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); box-shadow: 0 4px 12px rgba(107, 140, 174, 0.3);">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: var(--olive-light); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                         <span style="font-size: 32px; font-weight: 700; color: white;">3</span>
                     </div>
-                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-blue); margin-bottom: 12px;">Days</div>
+                    <div style="font-size: 24px; font-weight: 700; color: var(--coffee); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Less bloated. No more 3pm sugar cravings. Clearer thinking.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #9BAA96 0%, #E8F0E3 100%); box-shadow: 0 4px 12px rgba(155, 170, 150, 0.3);">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: var(--beige); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                         <span style="font-size: 32px; font-weight: 700; color: white;">7</span>
                     </div>
-                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-sage); margin-bottom: 12px;">Days</div>
+                    <div style="font-size: 24px; font-weight: 700; color: var(--olive-light); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Better sleep. Waking up refreshed instead of groggy.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #6B8CAE 0%, #D6E9FF 100%); box-shadow: 0 4px 12px rgba(107, 140, 174, 0.3);">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: var(--olive-light); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                         <span style="font-size: 32px; font-weight: 700; color: white;">14</span>
                     </div>
-                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-blue); margin-bottom: 12px;">Days</div>
+                    <div style="font-size: 24px; font-weight: 700; color: var(--coffee); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Sustained energy. Playing with kids/grandkids without exhaustion.</p>
                 </div>
 
                 <div style="text-align: center; padding: 32px; background: white; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: linear-gradient(135deg, #9BAA96 0%, #E8F0E3 100%); box-shadow: 0 4px 12px rgba(155, 170, 150, 0.3);">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: 16px; border-radius: 50%; background: var(--beige); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
                         <span style="font-size: 32px; font-weight: 700; color: white;">30</span>
                     </div>
-                    <div style="font-size: 24px; font-weight: 700; color: var(--accent-sage); margin-bottom: 12px;">Days</div>
+                    <div style="font-size: 24px; font-weight: 700; color: var(--olive-light); margin-bottom: 12px;">Days</div>
                     <p style="font-size: 15px; line-height: 1.6; color: var(--text-dark);">Pants fit better. You feel like YOU again. Not perfect - just better.</p>
                 </div>
             </div>
@@ -2650,7 +2649,7 @@
     </section>
 
     <!-- What You'll Make Section -->
-    <section style="padding: 80px 40px; background: var(--cream);">
+    <section style="padding: 80px 40px; background: var(--white);">
         <div style="max-width: 1200px; margin: 0 auto;">
             <div class="section-header">
                 <h2>See What You'll Make</h2>
@@ -2719,7 +2718,7 @@
             
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 60px;">
                 <!-- Left: American Keto -->
-                <div style="padding: 40px; background: #FFF8F3; border-radius: 16px; border: 2px solid #F5D9C8;">
+                <div style="padding: 40px; background: #FFF8F3; border-radius: 16px; border: 1px solid #F5D9C8;">
                     <h3 style="font-size: 28px; margin-bottom: 24px; color: #C4856B;">❌ American "Keto" Products</h3>
                     <ul style="list-style: none; font-size: 17px; line-height: 2; color: var(--text-dark);">
                         <li style="margin-bottom: 16px;"><strong>Processed cheese products</strong> - inflammatory oils, artificial flavors</li>
@@ -2732,8 +2731,8 @@
                 </div>
 
                 <!-- Right: Mediterranean -->
-                <div style="padding: 40px; background: var(--soft-sage); border-radius: 16px; border: 2px solid var(--accent-sage);">
-                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--accent-sage); display: flex; align-items: center; gap: 8px;">
+                <div style="padding: 40px; background: var(--beige-light); border-radius: 16px; border: 1px solid var(--olive-light);">
+                    <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--olive-light); display: flex; align-items: center; gap: 8px;">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 28px; height: 28px;"><use xlink:href="#icon-check"/></svg> Mediterranean Whole Foods
                     </h3>
                     <ul style="list-style: none; font-size: 17px; line-height: 2; color: var(--text-dark);">
@@ -2743,7 +2742,7 @@
                         <li style="margin-bottom: 16px;"><strong>Extra virgin olive oil</strong> - polyphenols reduce inflammation</li>
                         <li style="margin-bottom: 16px;"><strong>Nuts, seeds, legumes</strong> - phytoestrogens ease symptoms</li>
                     </ul>
-                    <p style="margin-top: 24px; font-size: 16px; color: var(--accent-sage); font-weight: 600;">Result: Sustained energy, clearer thinking, easier perimenopause, lasting weight management</p>
+                    <p style="margin-top: 24px; font-size: 16px; color: var(--olive-light); font-weight: 600;">Result: Sustained energy, clearer thinking, easier perimenopause, lasting weight management</p>
                 </div>
             </div>
 
@@ -2759,7 +2758,7 @@
     </section>
 
     <!-- CTA Section 3 -->
-    <section style="padding: 80px 40px; background: var(--warm-white); text-align: center;">
+    <section style="padding: 80px 40px; background: var(--white); text-align: center;">
         <div style="max-width: 800px; margin: 0 auto;">
             <h2 style="font-size: 42px; margin-bottom: 20px; color: var(--text-dark);">Stop stressing about dinner</h2>
             <p style="font-size: 19px; color: var(--text-gray); margin-bottom: 40px; line-height: 1.7;">Your personalized meal plan is one click away. No signup required.</p>
@@ -2785,7 +2784,7 @@
                 <div style="background: white; border-radius: 24px; box-shadow: 0 12px 48px rgba(0,0,0,0.12); overflow: hidden;">
                     <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;">
                         <!-- Left: Traditional costs -->
-                        <div style="padding: 48px; background: linear-gradient(135deg, #FFF5EB 0%, #FFE8D6 100%);">
+                        <div style="padding: 48px; background: var(--beige-light);">
                             <h4 style="font-size: 22px; margin-bottom: 32px; color: var(--text-dark); font-weight: 700;">The Old Way</h4>
                             <div style="margin-bottom: 32px;">
                                 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding: 16px; background: white; border-radius: 12px;">
@@ -2822,7 +2821,7 @@
                         </div>
 
                         <!-- Right: Olive&Keto -->
-                        <div style="padding: 48px; background: linear-gradient(135deg, #E8F4E5 0%, #D6E9D7 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                        <div style="padding: 48px; background: var(--beige-light); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
                             <div style="margin-bottom: 20px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 56px; height: 56px;"><use xlink:href="#icon-olive"/></svg>
                             </div>
@@ -2874,7 +2873,7 @@
                     <div class="pricing-period">per month</div>
 
                     <!-- Value Stack -->
-                    <div style="background: rgba(139, 157, 131, 0.1); border-radius: 12px; padding: 20px; margin: 20px 0; border: 2px solid var(--olive-green);">
+                    <div style="background: rgba(139, 157, 131, 0.1); border-radius: 12px; padding: 20px; margin: 20px 0; border: 1px solid var(--olive-green);">
                         <div style="font-size: 14px; color: var(--text-dark); line-height: 1.8; text-align: left;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
                                 <span>✓ 21 new recipes every week</span>
@@ -2922,8 +2921,8 @@
                 </div>
 
                 <!-- Annual Plan -->
-                <div class="pricing-card" style="position: relative; border: 3px solid var(--olive-green);">
-                    <div class="pricing-badge" style="background: linear-gradient(135deg, #C9A690 0%, #8B9D83 100%);">BEST VALUE - Save 45%</div>
+                <div class="pricing-card" style="position: relative; border: 1px solid var(--olive-green);">
+                    <div class="pricing-badge" style="background: var(--olive-green);">BEST VALUE - Save 45%</div>
                     <h3 class="pricing-name">Annual Plan</h3>
                     <p class="pricing-description">12 months of Mediterranean meal planning</p>
                     <div class="pricing-price">$49</div>
@@ -2933,7 +2932,7 @@
                         <div style="text-align: center;">
                             <div style="font-size: 32px; font-weight: 800; color: var(--olive-green); line-height: 1;">$4.08</div>
                             <div style="font-size: 14px; color: var(--text-gray); margin-top: 4px;">per month</div>
-                            <div style="font-size: 13px; font-weight: 700; color: var(--accent-sage); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(139, 157, 131, 0.3);">Save $59/year vs monthly plan</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--olive-light); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(139, 157, 131, 0.3);">Save $59/year vs monthly plan</div>
                         </div>
                     </div>
 
@@ -2948,7 +2947,7 @@
                         <li>One-time payment, full year coverage</li>
                         <li>30-day money-back guarantee</li>
                     </ul>
-                    <a href="#generator" class="btn-primary" style="width: 100%; background: linear-gradient(135deg, #8B9D83 0%, #6B8CAE 100%);">Get Annual Plan - Save $59 →</a>
+                    <a href="#generator" class="btn-primary" style="width: 100%; background: var(--olive-green);">Get Annual Plan - Save $59 →</a>
 
                     <div style="margin-top: 16px; padding: 12px; background: rgba(139, 157, 131, 0.1); border-radius: 8px; text-align: center;">
                         <p style="font-size: 12px; color: var(--text-gray); margin: 0;">🔥 <strong>73% of members</strong> choose yearly after first month</p>
@@ -2957,7 +2956,7 @@
             </div>
 
             <!-- Money-Back Guarantee -->
-            <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background: var(--beige-light); border-radius: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <div style="display: inline-flex; width: 80px; height: 80px; background: white; border-radius: 50%; margin-bottom: 20px; align-items: center; justify-content: center;">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 48px; height: 48px;"><use xlink:href="#icon-badge"/></svg>
                 </div>
@@ -3003,7 +3002,7 @@
                 </div>
 
                 <!-- Fear Reversal Checklist -->
-                <div style="padding: 24px; background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); border-radius: 12px; margin-bottom: 24px; border: 2px solid var(--olive-green);">
+                <div style="padding: 24px; background: var(--beige-light); border-radius: 12px; margin-bottom: 24px; border: 1px solid var(--olive-green);">
                     <h5 style="font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; text-align: center;">Why This Is Actually Free:</h5>
                     <div style="font-size: 13px; line-height: 1.8; color: var(--text-dark);">
                         <div style="display: flex; align-items: start; gap: 8px; margin-bottom: 10px;">
@@ -3059,7 +3058,7 @@
                     </div>
 
                     <!-- Scientific Macro Calculator Inputs -->
-                    <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 24px; border-radius: 12px; border: 2px solid var(--accent-sage); margin-bottom: 24px;">
+                    <div style="background: var(--beige-light); padding: 24px; border-radius: 12px; border: 1px solid var(--olive-light); margin-bottom: 24px;">
                         <h5 style="font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                             🔬 Science-Based Personalization
                         </h5>
@@ -3143,11 +3142,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group" style="background: var(--soft-sage); padding: 24px; border-radius: 12px; border: 2px solid var(--accent-sage); margin-top: 24px;">
+                    <div class="form-group" style="background: var(--beige-light); padding: 24px; border-radius: 12px; border: 1px solid var(--olive-light); margin-top: 24px;">
                         <label class="form-label" style="margin-bottom: 8px;">📧 Email Address (Optional)</label>
                         <input type="email" class="form-input" id="emailInput" placeholder="your@email.com" style="margin-bottom: 12px;">
                         <div style="display: flex; align-items: start; gap: 8px;">
-                            <span style="color: var(--accent-sage); font-size: 16px; flex-shrink: 0;">✓</span>
+                            <span style="color: var(--olive-light); font-size: 16px; flex-shrink: 0;">✓</span>
                             <p style="font-size: 13px; color: var(--text-gray); margin: 0; line-height: 1.5;">
                                 Get your meal plan via email • No spam, ever • Unsubscribe anytime
                             </p>
@@ -3455,12 +3454,12 @@
 
                 html += `
                     <div style="background: white; padding: 32px; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--border-light); box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                        <h4 style="font-size: 24px; margin-bottom: 24px; color: var(--accent-sage); border-bottom: 2px solid var(--soft-sage); padding-bottom: 12px;">${day}</h4>
+                        <h4 style="font-size: 24px; margin-bottom: 24px; color: var(--olive-light); border-bottom: 2px solid var(--beige-light); padding-bottom: 12px;">${day}</h4>
 
                         <!-- Breakfast -->
-                        <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-peach); border-radius: 12px;">
+                        <div style="margin-bottom: 28px; padding: 20px; background: var(--beige-light); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Breakfast</div>
+                                <div style="font-size: 13px; color: var(--olive-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Breakfast</div>
                                 <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 14px; height: 14px;"><use xlink:href="#icon-clock"/></svg> ${breakfast.time}
                                 </div>
@@ -3476,28 +3475,28 @@
 
                             <div style="display: flex; gap: 12px; font-size: 13px;">
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.calories}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${breakfast.macros.calories}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.protein}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${breakfast.macros.protein}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.fat}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${breakfast.macros.fat}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${breakfast.macros.carbs}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${breakfast.macros.carbs}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Lunch -->
-                        <div style="margin-bottom: 28px; padding: 20px; background: var(--soft-sage); border-radius: 12px;">
+                        <div style="margin-bottom: 28px; padding: 20px; background: var(--beige-light); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Lunch</div>
+                                <div style="font-size: 13px; color: var(--olive-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Lunch</div>
                                 <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 14px; height: 14px;"><use xlink:href="#icon-clock"/></svg> ${lunch.time}
                                 </div>
@@ -3513,28 +3512,28 @@
 
                             <div style="display: flex; gap: 12px; font-size: 13px;">
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.calories}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${lunch.macros.calories}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.protein}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${lunch.macros.protein}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.fat}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${lunch.macros.fat}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${lunch.macros.carbs}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${lunch.macros.carbs}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Dinner -->
-                        <div style="padding: 20px; background: var(--soft-blue); border-radius: 12px;">
+                        <div style="padding: 20px; background: var(--beige-light); border-radius: 12px;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <div style="font-size: 13px; color: var(--accent-sage); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Dinner</div>
+                                <div style="font-size: 13px; color: var(--olive-light); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Dinner</div>
                                 <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 14px; height: 14px;"><use xlink:href="#icon-clock"/></svg> ${dinner.time}
                                 </div>
@@ -3550,28 +3549,28 @@
 
                             <div style="display: flex; gap: 12px; font-size: 13px;">
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.calories}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dinner.macros.calories}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.protein}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dinner.macros.protein}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.fat}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dinner.macros.fat}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dinner.macros.carbs}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dinner.macros.carbs}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Dessert -->
-                        <div style="margin-top: 28px; padding: 20px; background: linear-gradient(135deg, #FFF8F0 0%, #FFE8D6 100%); border-radius: 12px; border: 2px dashed var(--accent-brown);">
+                        <div style="margin-top: 28px; padding: 20px; background: var(--beige-light); border-radius: 12px; border: 1px solid var(--coffee);">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <div style="font-size: 13px; color: var(--accent-brown); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Sweet Treat</div>
+                                <div style="font-size: 13px; color: var(--coffee); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Sweet Treat</div>
                                 <div style="font-size: 12px; color: var(--text-gray); background: white; padding: 4px 12px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 14px; height: 14px;"><use xlink:href="#icon-clock"/></svg> ${dessert.time}
                                 </div>
@@ -3587,19 +3586,19 @@
 
                             <div style="display: flex; gap: 12px; font-size: 13px;">
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dessert.macros.calories}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dessert.macros.calories}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Calories</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dessert.macros.protein}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dessert.macros.protein}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Protein</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dessert.macros.fat}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dessert.macros.fat}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Fat</div>
                                 </div>
                                 <div style="background: white; padding: 8px 12px; border-radius: 6px; flex: 1; text-align: center;">
-                                    <div style="font-weight: 700; color: var(--accent-blue); font-size: 16px;">${dessert.macros.carbs}</div>
+                                    <div style="font-weight: 700; color: var(--coffee); font-size: 16px;">${dessert.macros.carbs}</div>
                                     <div style="color: var(--text-gray); font-size: 11px;">Net Carbs</div>
                                 </div>
                             </div>
@@ -3610,7 +3609,7 @@
                         </div>
 
                         <!-- Daily Total -->
-                        <div style="margin-top: 20px; padding: 16px; background: linear-gradient(135deg, var(--soft-sage) 0%, var(--soft-blue) 100%); border-radius: 12px;">
+                        <div style="margin-top: 20px; padding: 16px; background: var(--beige-light); border-radius: 12px;">
                             <div style="font-size: 14px; font-weight: 600; margin-bottom: 10px; color: var(--text-dark);">Daily Total (including sweet treat):</div>
                             <div style="display: flex; gap: 12px; font-size: 13px;">
                                 <div style="background: white; padding: 10px; border-radius: 6px; flex: 1; text-align: center;">
@@ -3642,7 +3641,7 @@
             return `
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🥩 Proteins</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--coffee);">🥩 Proteins</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Wild-caught salmon (2 lbs)</li>
                             <li>• Grass-fed lamb chops (1.5 lbs)</li>
@@ -3653,7 +3652,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🥬 Vegetables</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--coffee);">🥬 Vegetables</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Mixed salad greens (3 bags)</li>
                             <li>• Cherry tomatoes (3 pints)</li>
@@ -3664,7 +3663,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🧀 Dairy & Cheese</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--coffee);">🧀 Dairy & Cheese</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Greek yogurt (32 oz)</li>
                             <li>• Feta cheese (8 oz)</li>
@@ -3673,7 +3672,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-blue);">🫒 Pantry Essentials</h4>
+                        <h4 style="font-size: 18px; margin-bottom: 16px; color: var(--coffee);">🫒 Pantry Essentials</h4>
                         <ul style="list-style: none; font-size: 15px; line-height: 2; color: var(--text-dark);">
                             <li>• Extra virgin olive oil</li>
                             <li>• Kalamata olives (1 jar)</li>
@@ -3783,12 +3782,12 @@
                 await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate loading
 
                 const mealPlan = `
-                    <div style="background: var(--warm-white); padding: 40px; border-radius: 16px; margin-bottom: 24px;">
+                    <div style="background: var(--white); padding: 40px; border-radius: 16px; margin-bottom: 24px;">
                         <h3 style="font-size: 32px; margin-bottom: 24px; text-align: center;">Your Personalized 3-Day Mediterranean Meal Plan</h3>
                         <p style="text-align: center; color: var(--text-gray); margin-bottom: 40px;">Customized for: ${ageRange} years old • ${goal} • ${cookingTime} meals • ${servings} servings</p>
 
                         <!-- Scientific Macro Recommendations -->
-                        <div style="background: linear-gradient(135deg, #E8F4E5 0%, #F0F8FF 100%); padding: 32px; border-radius: 16px; margin-bottom: 40px; border: 3px solid var(--accent-sage);">
+                        <div style="background: var(--beige-light); padding: 32px; border-radius: 16px; margin-bottom: 40px; border: 1px solid var(--olive-light);">
                             <div style="text-align: center; margin-bottom: 24px;">
                                 <h4 style="font-size: 24px; margin-bottom: 12px; color: var(--text-dark); display: flex; align-items: center; justify-content: center; gap: 8px;">
                                     🔬 Your Science-Based Nutrition Targets
@@ -3806,7 +3805,7 @@
                                 </div>
                                 <div style="background: white; padding: 24px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
                                     <div style="font-size: 14px; color: var(--text-gray); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">Your Target Intake</div>
-                                    <div style="font-size: 36px; font-weight: 700; color: var(--accent-sage); margin-bottom: 4px;">${macros.targetCalories}</div>
+                                    <div style="font-size: 36px; font-weight: 700; color: var(--olive-light); margin-bottom: 4px;">${macros.targetCalories}</div>
                                     <div style="font-size: 13px; color: var(--text-gray);">calories/day</div>
                                 </div>
                             </div>
@@ -3814,18 +3813,18 @@
                             <div style="background: white; padding: 24px; border-radius: 12px; margin-bottom: 24px;">
                                 <div style="font-size: 15px; font-weight: 600; margin-bottom: 16px; text-align: center; color: var(--text-dark);">Daily Macro Targets:</div>
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
-                                    <div style="text-align: center; padding: 16px; background: var(--soft-peach); border-radius: 8px;">
-                                        <div style="font-size: 28px; font-weight: 700; color: var(--accent-brown);">${macros.proteinGrams}g</div>
+                                    <div style="text-align: center; padding: 16px; background: var(--beige-light); border-radius: 8px;">
+                                        <div style="font-size: 28px; font-weight: 700; color: var(--coffee);">${macros.proteinGrams}g</div>
                                         <div style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">Protein</div>
                                         <div style="font-size: 11px; color: var(--text-gray); margin-top: 4px;">25% • Preserves muscle</div>
                                     </div>
-                                    <div style="text-align: center; padding: 16px; background: var(--soft-sage); border-radius: 8px;">
+                                    <div style="text-align: center; padding: 16px; background: var(--beige-light); border-radius: 8px;">
                                         <div style="font-size: 28px; font-weight: 700; color: var(--olive-green);">${macros.fatGrams}g</div>
                                         <div style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">Healthy Fats</div>
                                         <div style="font-size: 11px; color: var(--text-gray); margin-top: 4px;">65% • Sustainable energy</div>
                                     </div>
-                                    <div style="text-align: center; padding: 16px; background: var(--soft-blue); border-radius: 8px;">
-                                        <div style="font-size: 28px; font-weight: 700; color: var(--accent-blue);">${macros.carbGrams}g</div>
+                                    <div style="text-align: center; padding: 16px; background: var(--beige-light); border-radius: 8px;">
+                                        <div style="font-size: 28px; font-weight: 700; color: var(--coffee);">${macros.carbGrams}g</div>
                                         <div style="font-size: 13px; color: var(--text-gray); margin-top: 4px;">Net Carbs</div>
                                         <div style="font-size: 11px; color: var(--text-gray); margin-top: 4px;">10% • Moderate keto</div>
                                     </div>
@@ -3852,14 +3851,14 @@
                             <div style="margin-top: 20px; padding: 16px; background: rgba(255, 255, 255, 0.7); border-radius: 8px; text-align: center;">
                                 <p style="font-size: 12px; color: var(--text-gray); margin: 0; line-height: 1.6;">
                                     📚 <strong>Scientific basis:</strong> Mifflin-St Jeor equation (1990, validated 2005) • National Institute on Aging guidelines • Women's Health Initiative findings •
-                                    <a href="https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet" target="_blank" style="color: var(--accent-sage); text-decoration: underline;">Learn more</a>
+                                    <a href="https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet" target="_blank" style="color: var(--olive-light); text-decoration: underline;">Learn more</a>
                                 </p>
                             </div>
                         </div>
 
                         ${generateDemoWeek(ageRange, goal, cookingTime, servings, restrictions)}
 
-                        <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, var(--soft-peach) 0%, var(--soft-sage) 100%); border-radius: 16px;">
+                        <div style="text-align: center; margin-top: 40px; padding: 32px; background: linear-gradient(135deg, var(--beige-light) 0%, var(--beige-light) 100%); border-radius: 16px;">
                             <h3 style="margin-bottom: 16px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 28px; height: 28px;"><use xlink:href="#icon-sparkle"/></svg>
                                 Your free 3-day plan is ready!
@@ -3980,7 +3979,7 @@
 
             if (progress === 100) {
                 progressText.textContent = '✓ Ready to Generate!';
-                progressText.style.color = 'var(--accent-blue)';
+                progressText.style.color = 'var(--coffee)';
                 progressText.style.fontWeight = '700';
             } else {
                 progressText.style.color = 'var(--text-gray)';
