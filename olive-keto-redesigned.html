@@ -449,6 +449,104 @@
             flex-shrink: 0;
         }
 
+        /* Floating bubbles on meal images */
+        .meal-bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 12px 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+            z-index: 5;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .meal-bubble-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        .meal-bubble-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .meal-bubble-value {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--olive-green);
+        }
+
+        .meal-bubble-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* Different positions for bubbles */
+        .bubble-top-left {
+            top: 20px;
+            left: 20px;
+            animation-delay: 0s;
+        }
+
+        .bubble-top-right {
+            top: 20px;
+            right: 20px;
+            animation-delay: 0.5s;
+        }
+
+        .bubble-middle-left {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            animation-delay: 1s;
+        }
+
+        .bubble-bottom-right {
+            bottom: 20px;
+            right: 20px;
+            animation-delay: 1.5s;
+        }
+
+        .bubble-bottom-left {
+            bottom: 20px;
+            left: 20px;
+            animation-delay: 0.7s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Adjust animation for middle positioned bubbles */
+        .bubble-middle-left {
+            animation: float-middle 3s ease-in-out infinite;
+        }
+
+        @keyframes float-middle {
+            0%, 100% {
+                transform: translateY(-50%);
+            }
+            50% {
+                transform: translateY(calc(-50% - 10px));
+            }
+        }
+
         .hero-meal-content {
             padding: 32px;
             background: white;
@@ -1774,6 +1872,29 @@
                                          alt="Mediterranean meal with vegetables"
                                          loading="lazy"
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+                                    <!-- Floating bubbles -->
+                                    <div class="meal-bubble bubble-top-left">
+                                        <span class="meal-bubble-emoji">🥬</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Veggies</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-top-right">
+                                        <span class="meal-bubble-emoji">🥩</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">35g</span>
+                                            <span class="meal-bubble-label">Protein</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-right">
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">340</span>
+                                            <span class="meal-bubble-label">Calories</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hero-meal-content">
                                     <div class="hero-meal-label">Dinner</div>
@@ -1808,6 +1929,36 @@
                                          alt="Fresh Greek salad with feta cheese"
                                          loading="lazy"
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+                                    <!-- Floating bubbles -->
+                                    <div class="meal-bubble bubble-top-left">
+                                        <span class="meal-bubble-emoji">🥗</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Salad</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-top-right">
+                                        <span class="meal-bubble-emoji">🧀</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Feta</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-left">
+                                        <span class="meal-bubble-emoji">🫒</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">38g</span>
+                                            <span class="meal-bubble-label">Protein</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-right">
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">465</span>
+                                            <span class="meal-bubble-label">Calories</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hero-meal-content">
                                     <div class="hero-meal-label">Lunch</div>
@@ -1842,6 +1993,28 @@
                                          alt="Grilled vegetables and halloumi cheese"
                                          loading="lazy"
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+                                    <!-- Floating bubbles -->
+                                    <div class="meal-bubble bubble-top-left">
+                                        <span class="meal-bubble-emoji">🥬</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Grilled</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-top-right">
+                                        <span class="meal-bubble-emoji">🧀</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Halloumi</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-right">
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">280</span>
+                                            <span class="meal-bubble-label">Calories</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hero-meal-content">
                                     <div class="hero-meal-label">Lunch</div>
@@ -1876,6 +2049,29 @@
                                          alt="Grilled fish with lemon and herbs"
                                          loading="lazy"
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+                                    <!-- Floating bubbles -->
+                                    <div class="meal-bubble bubble-top-left">
+                                        <span class="meal-bubble-emoji">🐟</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Fresh Fish</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-top-right">
+                                        <span class="meal-bubble-emoji">🍋</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">42g</span>
+                                            <span class="meal-bubble-label">Protein</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-right">
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">380</span>
+                                            <span class="meal-bubble-label">Calories</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hero-meal-content">
                                     <div class="hero-meal-label">Dinner</div>
@@ -1910,6 +2106,29 @@
                                          alt="Mediterranean seafood platter"
                                          loading="lazy"
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+
+                                    <!-- Floating bubbles -->
+                                    <div class="meal-bubble bubble-top-left">
+                                        <span class="meal-bubble-emoji">🦐</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-label">Seafood</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-top-right">
+                                        <span class="meal-bubble-emoji">🌿</span>
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">28g</span>
+                                            <span class="meal-bubble-label">Protein</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="meal-bubble bubble-bottom-right">
+                                        <div class="meal-bubble-text">
+                                            <span class="meal-bubble-value">385</span>
+                                            <span class="meal-bubble-label">Calories</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="hero-meal-content">
                                     <div class="hero-meal-label">Dinner</div>
