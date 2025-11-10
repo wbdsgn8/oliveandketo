@@ -449,7 +449,7 @@
             flex-shrink: 0;
         }
 
-        /* Floating bubbles on meal images */
+        /* Floating bubbles on meal images - More random & varied */
         .meal-bubble {
             position: absolute;
             background: rgba(255, 255, 255, 0.95);
@@ -463,8 +463,25 @@
             font-weight: 600;
             color: var(--text-dark);
             z-index: 5;
-            animation: float 3s ease-in-out infinite;
         }
+
+        /* Varied bubble sizes for randomness */
+        .bubble-sm {
+            padding: 8px 16px;
+            border-radius: 16px;
+        }
+
+        .bubble-sm .meal-bubble-emoji { font-size: 22px; }
+        .bubble-sm .meal-bubble-value { font-size: 17px; }
+        .bubble-sm .meal-bubble-label { font-size: 10px; }
+
+        .bubble-lg {
+            padding: 14px 24px;
+            border-radius: 24px;
+        }
+
+        .bubble-lg .meal-bubble-emoji { font-size: 32px; }
+        .bubble-lg .meal-bubble-value { font-size: 23px; }
 
         .meal-bubble-emoji {
             font-size: 28px;
@@ -492,59 +509,43 @@
             font-weight: 600;
         }
 
-        /* Different positions for bubbles */
-        .bubble-top-left {
-            top: 20px;
-            left: 20px;
-            animation-delay: 0s;
+        /* More random positions - 8 different spots */
+        .bubble-p1 { top: 12%; left: 8%; }
+        .bubble-p2 { top: 8%; right: 12%; }
+        .bubble-p3 { top: 38%; left: 5%; }
+        .bubble-p4 { top: 52%; right: 8%; }
+        .bubble-p5 { bottom: 15%; left: 18%; }
+        .bubble-p6 { bottom: 8%; right: 10%; }
+        .bubble-p7 { top: 65%; left: 12%; }
+        .bubble-p8 { top: 25%; left: 45%; }
+
+        /* Varied animation speeds and styles */
+        .bubble-a1 { animation: float-a1 3.2s ease-in-out infinite; }
+        .bubble-a2 { animation: float-a2 2.7s ease-in-out infinite; animation-delay: 0.3s; }
+        .bubble-a3 { animation: float-a3 3.5s ease-in-out infinite; animation-delay: 0.8s; }
+        .bubble-a4 { animation: float-a4 2.4s ease-in-out infinite; animation-delay: 1.2s; }
+
+        @keyframes float-a1 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-14px) rotate(2deg); }
         }
 
-        .bubble-top-right {
-            top: 20px;
-            right: 20px;
-            animation-delay: 0.5s;
+        @keyframes float-a2 {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-9px) scale(1.03); }
         }
 
-        .bubble-middle-left {
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            animation-delay: 1s;
+        @keyframes float-a3 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-6px) rotate(-1deg); }
+            66% { transform: translateY(-11px) rotate(1deg); }
         }
 
-        .bubble-bottom-right {
-            bottom: 20px;
-            right: 20px;
-            animation-delay: 1.5s;
-        }
-
-        .bubble-bottom-left {
-            bottom: 20px;
-            left: 20px;
-            animation-delay: 0.7s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Adjust animation for middle positioned bubbles */
-        .bubble-middle-left {
-            animation: float-middle 3s ease-in-out infinite;
-        }
-
-        @keyframes float-middle {
-            0%, 100% {
-                transform: translateY(-50%);
-            }
-            50% {
-                transform: translateY(calc(-50% - 10px));
-            }
+        @keyframes float-a4 {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-4px); }
+            50% { transform: translateY(-12px); }
+            75% { transform: translateY(-7px); }
         }
 
         .hero-meal-content {
@@ -1834,6 +1835,7 @@
             <nav>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#pricing">Pricing</a>
+                <a href="#blog">Blog</a>
                 <a href="#generator">Try Free</a>
                 <a href="#" class="login-btn" style="margin-left: 40px; padding: 10px 24px; background: var(--olive-green); color: white; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">Login</a>
             </nav>
@@ -1874,14 +1876,14 @@
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
 
                                     <!-- Floating bubbles -->
-                                    <div class="meal-bubble bubble-top-left">
+                                    <div class="meal-bubble bubble-sm bubble-p1 bubble-a1">
                                         <span class="meal-bubble-emoji">🥬</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Veggies</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-top-right">
+                                    <div class="meal-bubble bubble-lg bubble-p2 bubble-a2">
                                         <span class="meal-bubble-emoji">🥩</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">35g</span>
@@ -1889,7 +1891,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-right">
+                                    <div class="meal-bubble bubble-p6 bubble-a3">
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">340</span>
                                             <span class="meal-bubble-label">Calories</span>
@@ -1931,21 +1933,21 @@
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
 
                                     <!-- Floating bubbles -->
-                                    <div class="meal-bubble bubble-top-left">
+                                    <div class="meal-bubble bubble-p8 bubble-a4">
                                         <span class="meal-bubble-emoji">🥗</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Salad</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-top-right">
+                                    <div class="meal-bubble bubble-sm bubble-p2 bubble-a1">
                                         <span class="meal-bubble-emoji">🧀</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Feta</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-left">
+                                    <div class="meal-bubble bubble-lg bubble-p7 bubble-a2">
                                         <span class="meal-bubble-emoji">🫒</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">38g</span>
@@ -1953,7 +1955,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-right">
+                                    <div class="meal-bubble bubble-p6 bubble-a3">
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">465</span>
                                             <span class="meal-bubble-label">Calories</span>
@@ -1995,21 +1997,21 @@
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
 
                                     <!-- Floating bubbles -->
-                                    <div class="meal-bubble bubble-top-left">
+                                    <div class="meal-bubble bubble-sm bubble-p3 bubble-a2">
                                         <span class="meal-bubble-emoji">🥬</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Grilled</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-top-right">
+                                    <div class="meal-bubble bubble-p1 bubble-a4">
                                         <span class="meal-bubble-emoji">🧀</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Halloumi</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-right">
+                                    <div class="meal-bubble bubble-lg bubble-p6 bubble-a1">
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">280</span>
                                             <span class="meal-bubble-label">Calories</span>
@@ -2051,14 +2053,14 @@
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
 
                                     <!-- Floating bubbles -->
-                                    <div class="meal-bubble bubble-top-left">
+                                    <div class="meal-bubble bubble-lg bubble-p1 bubble-a3">
                                         <span class="meal-bubble-emoji">🐟</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Fresh Fish</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-top-right">
+                                    <div class="meal-bubble bubble-p4 bubble-a1">
                                         <span class="meal-bubble-emoji">🍋</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">42g</span>
@@ -2066,7 +2068,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-right">
+                                    <div class="meal-bubble bubble-sm bubble-p5 bubble-a4">
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">380</span>
                                             <span class="meal-bubble-label">Calories</span>
@@ -2108,14 +2110,14 @@
                                          style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
 
                                     <!-- Floating bubbles -->
-                                    <div class="meal-bubble bubble-top-left">
+                                    <div class="meal-bubble bubble-p2 bubble-a2">
                                         <span class="meal-bubble-emoji">🦐</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-label">Seafood</span>
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-top-right">
+                                    <div class="meal-bubble bubble-sm bubble-p7 bubble-a4">
                                         <span class="meal-bubble-emoji">🌿</span>
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">28g</span>
@@ -2123,7 +2125,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="meal-bubble bubble-bottom-right">
+                                    <div class="meal-bubble bubble-lg bubble-p6 bubble-a1">
                                         <div class="meal-bubble-text">
                                             <span class="meal-bubble-value">385</span>
                                             <span class="meal-bubble-label">Calories</span>
@@ -3176,6 +3178,66 @@
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 16px; height: 16px;"><use xlink:href="#icon-check"/></svg> No credit card
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 16px; height: 16px;"><use xlink:href="#icon-check"/></svg> Instant results
             </p>
+        </div>
+    </section>
+
+    <!-- Blog - Latest Articles -->
+    <section id="blog" style="padding: 80px 40px; background: var(--beige-light);">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 42px; margin-bottom: 16px; color: var(--text-dark);">Mediterranean Living</h2>
+                <p style="font-size: 18px; color: var(--text-medium); max-width: 700px; margin: 0 auto;">Practical advice, recipes, and science-backed insights for your keto Mediterranean journey</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                <!-- Article 1 - Featured -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                    <div style="width: 100%; height: 240px; background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop&auto=format&q=90'); background-size: cover; background-position: center; position: relative;">
+                        <div style="position: absolute; top: 16px; left: 16px; background: var(--olive-green); color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">New</div>
+                    </div>
+                    <div style="padding: 28px;">
+                        <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 12px;">RECIPES • 5 MIN READ</div>
+                        <h3 style="font-size: 24px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.3;">5 Easy Mediterranean Keto Breakfasts You'll Actually Make</h3>
+                        <p style="font-size: 16px; color: var(--text-medium); line-height: 1.6; margin-bottom: 20px;">Start your day with these simple, delicious recipes that keep you in ketosis while embracing Mediterranean flavors.</p>
+                        <a href="#" style="color: var(--olive-green); font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 6px;">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                    <div style="width: 100%; height: 240px; background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=600&fit=crop&auto=format&q=90'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 28px;">
+                        <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 12px;">NUTRITION • 7 MIN READ</div>
+                        <h3 style="font-size: 24px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.3;">Why Olive Oil Is Your Secret Weapon After 40</h3>
+                        <p style="font-size: 16px; color: var(--text-medium); line-height: 1.6; margin-bottom: 20px;">The science behind extra virgin olive oil and how it supports hormonal balance, brain health, and longevity.</p>
+                        <a href="#" style="color: var(--olive-green); font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 6px;">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                    <div style="width: 100%; height: 240px; background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&h=600&fit=crop&auto=format&q=90'); background-size: cover; background-position: center;"></div>
+                    <div style="padding: 28px;">
+                        <div style="font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 12px;">LIFESTYLE • 6 MIN READ</div>
+                        <h3 style="font-size: 24px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.3;">How to Meal Prep Like a Mediterranean Pro</h3>
+                        <p style="font-size: 16px; color: var(--text-medium); line-height: 1.6; margin-bottom: 20px;">Time-saving strategies for preparing a week of delicious, keto-friendly Mediterranean meals in just 2 hours.</p>
+                        <a href="#" style="color: var(--olive-green); font-weight: 600; text-decoration: none; font-size: 15px; display: inline-flex; align-items: center; gap: 6px;">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#" style="display: inline-flex; align-items: center; justify-content: center; padding: 16px 40px; background: transparent; color: var(--olive-green); border: 2px solid var(--olive-green); border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease;">
+                    View All Articles →
+                </a>
+            </div>
         </div>
     </section>
 
